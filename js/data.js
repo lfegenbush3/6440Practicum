@@ -26,3 +26,49 @@ FHIR.oauth2.ready().then(function(client) {
     )
 }
 )
+
+FHIR.oauth2.ready().then(function(client) {
+  // get patient object and then display its demographics info in the banner
+  client.request(`Patient/${client.patient.id}`).then(
+    function(patient) {
+      displayPatient(patient);
+      console.log(patient);
+    }
+  );
+  // get observation resoruce values
+  // you will need to update the below to retrive the weight and height values
+  var query = new URLSearchParams();
+
+  query.set("patient", client.patient.id);
+  query.set("_count", 100);
+  query.set("_sort", "-date");
+  query.set("code", [
+    'http://loinc.org|58131-4',
+  ].join(","));
+
+  client.request("Observation?" + query, {
+    pageLimit: 0,
+    flat: true
+  }).then(
+    function(ob) {
+      // group all of the observation resoruces by type into their own
+      var byCodes = client.byCodes(ob, 'code');
+      var hdl = byCodes('58131-4');
+
+      // create patient object
+      var p = defaultPatient();
+
+      // set patient value parameters to the data pulled from the observation resoruce
+      if (typeof systolicbp != 'undefined') {
+        p.sys = systolicbp;
+      } else {
+        p.sys = 'undefined'
+      }
+
+      p.hdl = getQuantityValueAndUnit(hdl[0]);
+      p.ldl = getQuantityValueAndUnit(ldl[0]);
+
+      displayObservation(p)
+
+    });
+  }).catch(console.error);
