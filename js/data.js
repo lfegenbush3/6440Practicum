@@ -13,7 +13,8 @@ function displayPatient(pt) {
     document.getElementById('patient_name').innerHTML = getPatientName(pt);
     document.getElementById('gender').innerHTML = pt.gender;
     document.getElementById('dob').innerHTML = pt.birthDate;
-  }
+}
+
 function defaultPatient() {
     return {
       flu_vaccine: {
@@ -26,17 +27,6 @@ function defaultPatient() {
     };
 }
 
-FHIR.oauth2.ready().then(function(client) {
-
-    // get patient object and then display its demographics info in the banner
-    client.request(`Patient/${client.patient.id}`).then(
-      function(patient) {
-        displayPatient(patient);
-        console.log(patient);
-      }
-    )
-}
-)
 
 FHIR.oauth2.ready().then(function(client) {
   // get patient object and then display its demographics info in the banner
@@ -74,11 +64,7 @@ FHIR.oauth2.ready().then(function(client) {
 
       console.log(weight);
       // set patient value parameters to the data pulled from the observation resoruce
-      if (typeof systolicbp != 'undefined') {
-        p.flu_vaccine = systolicbp;
-      } else {
-        p.flu_vaccine = 'undefined'
-      }    
+    
 
     });
   }).catch(console.error);
