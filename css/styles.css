@@ -26,11 +26,11 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
-    background-color: #1ea6ff;
+    background-color: #da1eff;
   }
   
   
   .main {
     grid-area: main;
-    background-color: #2b4865;
+    background-color: #10a2db;
   }
