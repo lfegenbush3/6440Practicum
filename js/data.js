@@ -1,10 +1,8 @@
 function getPatientName(pt) {
   for(let i = 0; i <pt.name.length; i++){
-    
     if (pt.name) {
       var names = pt.name.map(function(name) {
-        console.log(pt.name[i].use)
-        console.log(i)
+        console.log(pt.name)
         return name.given.join(" ") + " " + name.family;
       });
       return names.join(" / ")
