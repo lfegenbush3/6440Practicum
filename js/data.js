@@ -19,6 +19,9 @@ function defaultPatient() {
       flu_vaccine: {
         value: ''
       },
+      weight: {
+        value:
+      },
       note: 'No Annotation',
     };
 }
@@ -53,6 +56,7 @@ FHIR.oauth2.ready().then(function(client) {
   query.set("code", [
     'http://loinc.org|58131-4', 
     'http://loinc.org|72058-1',
+    'http://loinc.org|29463-7',
   ].join(","));
 
   client.request("Observation?" + query, {
@@ -63,11 +67,12 @@ FHIR.oauth2.ready().then(function(client) {
       // group all of the observation resoruces by type into their own
       var byCodes = client.byCodes(ob, 'code');
       var flu_vaccine = byCodes('72058-1');
+      var weight = byCodes('29463-7');
 
       // create patient object
       var p = defaultPatient();
 
-      console.log(p.flu_vaccine);
+      console.log(p.weight);
       // set patient value parameters to the data pulled from the observation resoruce
       if (typeof systolicbp != 'undefined') {
         p.flu_vaccine = systolicbp;
