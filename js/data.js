@@ -1,7 +1,7 @@
 function getPatientName(pt) {
   for(let i = 0; i <pt.name.length; i++){
     console.log(pt.name[i].use)
-    if (pt.name && pt.name[i].use != 'old') {
+    if (pt.name) {
       var names = pt.name.map(function(name) {
         return name.given.join(" ") + " " + name.family;
       });
