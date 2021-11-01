@@ -72,15 +72,13 @@ FHIR.oauth2.ready().then(function(client) {
       // create patient object
       var p = defaultPatient();
 
-      console.log(p.weight);
+      console.log(weight);
       // set patient value parameters to the data pulled from the observation resoruce
       if (typeof systolicbp != 'undefined') {
         p.flu_vaccine = systolicbp;
       } else {
         p.flu_vaccine = 'undefined'
-      }
-
-      
+      }    
 
     });
   }).catch(console.error);
