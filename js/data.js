@@ -73,7 +73,7 @@ FHIR.oauth2.ready().then(function(client) {
         p.flu_vaccine = 'undefined'
       }
 
-      flu_vaccine.innerHTML = p.flu_vaccine;
+      console.log(p.flu_vaccine);
 
     });
   }).catch(console.error);
