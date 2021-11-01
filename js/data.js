@@ -4,8 +4,9 @@ function getPatientName(pt) {
       var names = pt.name.map(function(name) {
         if(name.use = "official"){
           console.log(name.use)
-          return name.given.join(" ") + " " + name.family; 
+          pt_name = name.given.join(" ") + " " + name.family; 
         }
+        return pt_name
       });
       return names.join(" / ")
     } else {
