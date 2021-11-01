@@ -14,7 +14,15 @@ function displayPatient(pt) {
     document.getElementById('gender').innerHTML = pt.gender;
     document.getElementById('dob').innerHTML = pt.birthDate;
   }
-  
+function defaultPatient() {
+    return {
+      flu_vaccine: {
+        value: ''
+      },
+      note: 'No Annotation',
+    };
+}
+
 FHIR.oauth2.ready().then(function(client) {
 
     // get patient object and then display its demographics info in the banner
@@ -53,20 +61,17 @@ FHIR.oauth2.ready().then(function(client) {
     function(ob) {
       // group all of the observation resoruces by type into their own
       var byCodes = client.byCodes(ob, 'code');
-      var hdl = byCodes('58131-4');
+      var flu_vaccine = byCodes('58131-4');
 
       // create patient object
       var p = defaultPatient();
 
       // set patient value parameters to the data pulled from the observation resoruce
       if (typeof systolicbp != 'undefined') {
-        p.sys = systolicbp;
+        p.flu_vaccine = systolicbp;
       } else {
-        p.sys = 'undefined'
+        p.flu_vaccine = 'undefined'
       }
-
-      p.hdl = getQuantityValueAndUnit(hdl[0]);
-      p.ldl = getQuantityValueAndUnit(ldl[0]);
 
       displayObservation(p)
 
