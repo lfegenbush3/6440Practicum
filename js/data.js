@@ -6,7 +6,7 @@ function getPatientName(pt) {
           console.log(name.use)
           pt_name = name.given.join(" ") + " " + name.family; 
         }
-        return pt_name
+        return pt_name;
       });
       return names.join(" / ")
     } else {
