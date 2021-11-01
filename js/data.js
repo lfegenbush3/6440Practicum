@@ -62,7 +62,7 @@ FHIR.oauth2.ready().then(function(client) {
     function(ob) {
       // group all of the observation resoruces by type into their own
       var byCodes = client.byCodes(ob, 'code');
-      var flu_vaccine = byCodes('58131-4');
+      var flu_vaccine = byCodes('72058-1');
 
       // create patient object
       var p = defaultPatient();
