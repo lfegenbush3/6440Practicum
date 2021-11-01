@@ -20,7 +20,7 @@ function defaultPatient() {
         value: ''
       },
       weight: {
-        value:
+        value:''
       },
       note: 'No Annotation',
     };
