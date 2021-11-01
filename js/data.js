@@ -3,7 +3,7 @@ function getPatientName(pt) {
     if (pt.name) {
       var names = pt.name.map(function(name) {
         if(name.use = "official"){
-          console.log(name.use)
+          console.log("hi " +name.use)
           pt_name = name.given.join(" ") + " " + name.family; 
         }
         return pt_name;
