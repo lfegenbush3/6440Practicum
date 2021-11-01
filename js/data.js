@@ -51,7 +51,8 @@ FHIR.oauth2.ready().then(function(client) {
   query.set("_count", 100);
   query.set("_sort", "-date");
   query.set("code", [
-    'http://loinc.org|58131-4',
+    'http://loinc.org|58131-4', 
+    'http://loinc.org|72058-1',
   ].join(","));
 
   client.request("Observation?" + query, {
@@ -65,7 +66,7 @@ FHIR.oauth2.ready().then(function(client) {
 
       // create patient object
       var p = defaultPatient();
-      
+
       console.log(p.flu_vaccine);
       // set patient value parameters to the data pulled from the observation resoruce
       if (typeof systolicbp != 'undefined') {
