@@ -13,6 +13,7 @@ function displayPatient(pt) {
     document.getElementById('patient_name').innerHTML = getPatientName(pt);
     document.getElementById('gender').innerHTML = pt.gender;
     document.getElementById('dob').innerHTML = pt.birthDate;
+    console.log(getPatientName(pt));
 }
 
 function defaultPatient() {
