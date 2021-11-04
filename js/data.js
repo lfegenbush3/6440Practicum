@@ -61,7 +61,7 @@ FHIR.oauth2.ready().then(function(client) {
       var byCodes = client.byCodes(ob, 'code');
       var flu_vaccine = byCodes('72058-1');
       var weight = byCodes('29463-7');
-      console.log("codes:" +byCodes)
+      console.log("weight:" +weight)
       // create patient object
       var p = defaultPatient();
 
