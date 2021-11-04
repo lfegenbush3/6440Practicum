@@ -46,6 +46,7 @@ function getMaxDate(ob_arr) {
   for(i=0; i < ob_arr.length; i++){
     dates.push(ob_arr[i])
   }
+  console.log("dates" + dates )
   console.log(new Date(Math.max.apply(null, dates)))
 }
 
@@ -81,7 +82,7 @@ FHIR.oauth2.ready().then(function(client) {
       var weight = byCodes('29463-7');
 
       console.log("weight:" + getQuantityValueAndUnit(weight[0]))
-      console.log("weight:" + getMaxDate(weight))
+      getMaxDate(weight);
       
       console.log(ob)
       // create patient object
