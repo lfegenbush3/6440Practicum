@@ -85,7 +85,7 @@ FHIR.oauth2.ready().then(function(client) {
        
       for (i=0; i < weight.length; i++){
         console.log(getMaxDate(weight))
-        console.log("test" + weight[i].effectiveDateTime)
+        console.log("test" + weight[i])
         if (new Date(weight[i].effectiveDateTime) == getMaxDate(weight)){
           console.log(weight[i])
         }
