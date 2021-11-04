@@ -1,19 +1,15 @@
 function getPatientName(pt) {
-  for(let i = 0; i <pt.name.length; i++){
+  
     if (pt.name) {
       var names = pt.name.map(function(name) {
-        if(name.use = "official"){
-          console.log("hi " +name.use)
-          pt_name = name.given.join(" ") + " " + name.family; 
-        }
-        return pt_name;
-      });
+        return name.given.join(" ") + " " + name.family; 
+        })
       return names.join(" / ")
     } else {
       return "anonymous";
   }
 }
-}
+
 
 function displayPatient(pt) {
     document.getElementById('patient_name').innerHTML = getPatientName(pt);
