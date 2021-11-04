@@ -80,7 +80,7 @@ FHIR.oauth2.ready().then(function(client) {
       var flu_vaccine = byCodes('72058-1');
       var weight = byCodes('29463-7');
 
-      console.log("weight:" + getQuantityValueAndUnit(weight[i]))
+      console.log("weight:" + getQuantityValueAndUnit(weight[0]))
       console.log("weight:" + getMaxDate(weight))
       
       console.log(ob)
