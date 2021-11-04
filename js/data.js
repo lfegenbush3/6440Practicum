@@ -46,7 +46,7 @@ function getMaxDate(ob_arr) {
   for(i=0; i < ob_arr.length; i++){
     dates.push(ob_arr[i])
   }
-  console.log(newDate(Math.max.apply(null, dates)))
+  console.log(new Date(Math.max.apply(null, dates)))
 }
 
 FHIR.oauth2.ready().then(function(client) {
