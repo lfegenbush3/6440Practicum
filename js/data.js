@@ -73,7 +73,7 @@ FHIR.oauth2.ready().then(function(client) {
 
       for(i=0; i < weight.length; i++){
         console.log("weight:" + getQuantityValueAndUnit(weight[i]))
-        console.log(weight.effectiveDateTime)
+        console.log(weight[i].effectiveDateTime)
       }
       console.log(ob)
       // create patient object
