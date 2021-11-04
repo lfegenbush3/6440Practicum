@@ -82,10 +82,9 @@ FHIR.oauth2.ready().then(function(client) {
       var weight = byCodes('29463-7');
 
       console.log("weight:" + getQuantityValueAndUnit(weight[0]))
-      console.log(weight.length)
       for (i=0; i < weight.length; i++){
         console.log(getMaxDate(weight))
-        console.log("test" + weight[i])
+        console.log("test" + weight[19])
         if (new Date(weight[i].effectiveDateTime) == getMaxDate(weight)){
           console.log(weight[i])
         }
