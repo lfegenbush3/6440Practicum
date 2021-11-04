@@ -65,7 +65,7 @@ FHIR.oauth2.ready().then(function(client) {
       // create patient object
       var p = defaultPatient();
 
-      console.log(byCodes('29463-7'));
+      console.log("test"+byCodes('29463-7'));
       // set patient value parameters to the data pulled from the observation resoruce
     
 
