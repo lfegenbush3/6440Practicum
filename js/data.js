@@ -30,6 +30,15 @@ function defaultPatient() {
     };
 }
 
+function getQuantityValueAndUnit(ob) {
+  if (typeof ob != 'undefined' &&
+    typeof ob.valueQuantity != 'undefined' &&
+    typeof ob.valueQuantity.value != 'undefined' &&
+    typeof ob.valueQuantity.unit != 'undefined') {
+    return Number(parseFloat((ob.valueQuantity.value)).toFixed(2)) + ' ' + ob.valueQuantity.unit;
+  } else {
+    return undefined;
+  }}
 
 FHIR.oauth2.ready().then(function(client) {
   // get patient object and then display its demographics info in the banner
@@ -61,7 +70,7 @@ FHIR.oauth2.ready().then(function(client) {
       var byCodes = client.byCodes(ob, 'code');
       var flu_vaccine = byCodes('72058-1');
       var weight = byCodes('29463-7');
-      console.log("weight:" +weight)
+      console.log("weight:" +getQuantityValueAndUnit(weight[0]))
       // create patient object
       var p = defaultPatient();
 
