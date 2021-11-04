@@ -46,8 +46,8 @@ function getMaxDate(ob_arr) {
   for(i=0; i < ob_arr.length; i++){
     dates.push(new Date(ob_arr[i].effectiveDateTime))
   }
-  console.log("dates  " + dates )
-  console.log("date " + new Date(Math.max.apply(null, dates)))
+  
+  return new Date(Math.max.apply(null, dates));
 }
 
 FHIR.oauth2.ready().then(function(client) {
@@ -82,8 +82,12 @@ FHIR.oauth2.ready().then(function(client) {
       var weight = byCodes('29463-7');
 
       console.log("weight:" + getQuantityValueAndUnit(weight[0]))
-      getMaxDate(weight);
-      
+       
+      for (i=0; i < weight.length; i++){
+        if (weight[i].effectiveDateTime == getMaxDate(weight)){
+          console.log(weight[i])
+        }
+      }
       console.log(ob)
       // create patient object
       var p = defaultPatient();
