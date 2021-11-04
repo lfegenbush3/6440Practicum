@@ -46,7 +46,7 @@ function getMaxDate(ob_arr) {
   for(i=0; i < ob_arr.length; i++){
     dates.push(ob_arr[i].effectiveDateTime)
   }
-  console.log("dates" + dates )
+  console.log("dates  " + dates )
   console.log("date " + Math.max.apply(null, dates))
 }
 
