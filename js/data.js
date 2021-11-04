@@ -40,6 +40,15 @@ function getQuantityValueAndUnit(ob) {
     return undefined;
   }}
 
+function getMaxDate(ob_arr) {
+  var dates = [];
+
+  for(i=0; i < ob_arr.length; i++){
+    dates.push(ob_arr[i])
+  }
+  console.log(newDate(Math.max.apply(null, dates)))
+}
+
 FHIR.oauth2.ready().then(function(client) {
   // get patient object and then display its demographics info in the banner
   client.request(`Patient/${client.patient.id}`).then(
@@ -71,10 +80,9 @@ FHIR.oauth2.ready().then(function(client) {
       var flu_vaccine = byCodes('72058-1');
       var weight = byCodes('29463-7');
 
-      for(i=0; i < weight.length; i++){
-        console.log("weight:" + getQuantityValueAndUnit(weight[i]))
-        console.log(weight[i].effectiveDateTime)
-      }
+      console.log("weight:" + getQuantityValueAndUnit(weight[i]))
+      console.log("weight:" + getMaxDate(weight))
+      
       console.log(ob)
       // create patient object
       var p = defaultPatient();
