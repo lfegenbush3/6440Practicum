@@ -1,5 +1,5 @@
 function getPatientName(pt) {
-    console.log('patient record' + pt.name);
+    console.log(pt.name);
     if (pt.name) {
       var names = pt.name.map(function(name) {
         return name.given.join(" ") + " " + name.family; 
@@ -89,13 +89,7 @@ FHIR.oauth2.ready().then(function(client) {
 
       //TO-DO: Finish obtaining latest weight and display
       console.log("weight:" + getQuantityValueAndUnit(weight[0]))
-      for (i=0; i < weight.length; i++){
-        console.log(getMaxDate(weight))
-        console.log("test" + weight[19].effectiveDateTime)
-        if (new Date(weight[i].effectiveDateTime) == getMaxDate(weight)){
-          console.log(weight[i])
-        }
-      }
+      console.log(getMaxDate(weight))
       
       
 
