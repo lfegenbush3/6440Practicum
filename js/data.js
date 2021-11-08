@@ -69,6 +69,7 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|58131-4', 
     'http://loinc.org|72058-1',
     'http://loinc.org|29463-7',
+    'http://loinc.org|82593-5',
   ].join(","));
 
   client.request("Observation?" + query, {
@@ -80,7 +81,13 @@ FHIR.oauth2.ready().then(function(client) {
       var byCodes = client.byCodes(ob, 'code');
       var flu_vaccine = byCodes('72058-1');
       var weight = byCodes('29463-7');
+      var vaccines = byCodes('82593-5');
 
+      console.log(ob)
+      // create patient object
+      var p = defaultPatient();
+
+      //TO-DO: Finish obtaining latest weight and display
       console.log("weight:" + getQuantityValueAndUnit(weight[0]))
       for (i=0; i < weight.length; i++){
         console.log(getMaxDate(weight))
@@ -89,9 +96,8 @@ FHIR.oauth2.ready().then(function(client) {
           console.log(weight[i])
         }
       }
-      console.log(ob)
-      // create patient object
-      var p = defaultPatient();
+      
+      
 
      
       // set patient value parameters to the data pulled from the observation resoruce
