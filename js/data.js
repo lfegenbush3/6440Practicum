@@ -18,7 +18,7 @@ function getPatientName(pt) {
 
 function displayPatient(pt) {
     document.getElementById('patient_name').innerHTML = getPatientName(pt);
-    document.getElementById('gender').innerHTML = pt.gender;
+   // document.getElementById('gender').innerHTML = pt.gender;
     document.getElementById('dob').innerHTML = pt.birthDate;
     console.log("Patient Name " + getPatientName(pt))
 }
@@ -58,6 +58,7 @@ function getMaxDate(ob_arr) {
 function getMaxValue(max_date, ob_arr) {
   for(i=0; i < ob_arr.length; i++){
     if(ob_arr[i].effectiveDateTime == max_date){
+      console.log(ob_arr[i])
       return getQuantityValueAndUnit(ob_arr[i])
     }
   }
