@@ -99,7 +99,7 @@ FHIR.oauth2.ready().then(function(client) {
       for(i = 0; i < weight.lenght; i++){
         console.log(weight[i])
         if(weight[i].effectiveDateTime==getMaxDate(weight)){
-          console.log("here")
+          console.log("hereda")
         }
       }
       
