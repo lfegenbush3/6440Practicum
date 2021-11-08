@@ -95,6 +95,10 @@ FHIR.oauth2.ready().then(function(client) {
       //TO-DO: Finish obtaining latest weight and display
       console.log("weight:" + getQuantityValueAndUnit(weight[0]))
       console.log(getMaxDate(weight))
+
+      for(i = 0; i < weight.lenght; i++){
+        console.log(weight[i])
+      }
       
       
 
