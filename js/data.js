@@ -58,7 +58,7 @@ function getMaxDate(ob_arr) {
 function getMaxValue(max_date, ob_arr) {
   for(i=0; i < ob_arr.length; i++){
     if(ob_arr[i].effectiveDateTime == max_date){
-      return ob_arr[i].valueQuantity
+      return ob_arr[i].valueQuantity.value
     }
   }
 }
