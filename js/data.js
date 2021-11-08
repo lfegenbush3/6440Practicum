@@ -1,13 +1,18 @@
 function getPatientName(pt) {
     console.log(pt.name);
-    if (pt.name) {
-      var names = pt.name.map(function(name) {
-        return name.given.join(" ") + " " + name.family; 
-        })
-      return names.join(" / ")
-    } else {
-      return "anonymous";
-  }
+    for(i=0; i < pt.name.length; i++){
+      if(pt.name[i].use == 'official'){
+        return pt.name[i].text
+      }
+    }
+    //if (pt.name) {
+    //  var names = pt.name.map(function(name) {
+    //    return name.given.join(" ") + " " + name.family; 
+    //    })
+    //  return names.join(" / ")
+    //} else {
+    //  return "anonymous";
+   //}
 }
 
 
