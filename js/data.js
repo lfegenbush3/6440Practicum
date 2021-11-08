@@ -55,6 +55,14 @@ function getMaxDate(ob_arr) {
   return new Date(Math.max.apply(null, dates));
 }
 
+function getMaxValue(max_date, ob_arr) {
+  for(i=0; i < ob_arr.length; i++){
+    if(ob_arr[i].effectiveDateTime == max_date){
+      return ob_arr[i].valueQuantity
+    }
+  }
+}
+
 FHIR.oauth2.ready().then(function(client) {
   // get patient object and then display its demographics info in the banner
   client.request(`Patient/${client.patient.id}`).then(
@@ -94,15 +102,9 @@ FHIR.oauth2.ready().then(function(client) {
 
       //TO-DO: Finish obtaining latest weight and display
       console.log("weight:" + getQuantityValueAndUnit(weight[0]))
-      console.log(getMaxDate(weight))
- 
-      for(i = 0; i < weight.lenght; i++){
-        console.log(getQuantityValueAndUnit(weight[i]))
-        if(weight[i].effectiveDateTime==getMaxDate(weight)){
-          console.log("hereda")
-        }
-      }
-      
+      console.log(getMaxValue(getMaxDate(weight), weight))
+    
+   
       
 
      
