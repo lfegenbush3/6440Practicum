@@ -1,5 +1,5 @@
 function getPatientName(pt) {
-  
+    console.log('patient record' + pt);
     if (pt.name) {
       var names = pt.name.map(function(name) {
         return name.given.join(" ") + " " + name.family; 
