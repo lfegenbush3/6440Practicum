@@ -2,7 +2,7 @@ function getPatientName(pt) {
     console.log(pt.name);
     for(i=0; i < pt.name.length; i++){
       if(pt.name[i].use == 'official'){
-        return pt.name[i].text
+        return pt.name[i].given + ' ' + pt.name[i].family
       }
     }
     //if (pt.name) {
