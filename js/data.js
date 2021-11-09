@@ -96,8 +96,7 @@ FHIR.oauth2.ready().then(function(client) {
     function(ob) {
       // group all of the observation resoruces by type into their own
       var byCodes = client.byCodes(ob, 'code');
-      var flu_vaccine = byCodes('72058-1');
-      var flu_vaccine1 = byCodes('55018-6');
+      var flu_vaccine = byCodes('55018-6');
       var weight = byCodes('29463-7');
       var covid_vaccine = byCodes('97073-1');
 
@@ -109,7 +108,13 @@ FHIR.oauth2.ready().then(function(client) {
       //Display data 
       document.getElementById('weight').innerHTML = getMaxValue(getMaxDate(weight), weight);
       document.getElementById('weight_date').innerHTML = getMaxDate(weight);
-      document.getElementById('flu_vaccine').innerHTML = flu_vaccine1;
+
+      if (flu_vaccine = 'undefined'){ 
+        document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
+      } else {
+        document.getElementById('flu_vaccine').innerHTML = flu_vaccine;
+      }
+      
       document.getElementById('covid_vaccine').innerHTML = covid_vaccine;
       
 
