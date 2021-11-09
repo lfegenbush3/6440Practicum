@@ -64,12 +64,12 @@ body {
   .mini-card {
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     column-gap: 10px;
-    margin: 20px;
+    margin: 10px;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #626296;
+    padding: 10px;
+    background-color: #181892;
   }
 
 .card {
