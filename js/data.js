@@ -86,6 +86,7 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|29463-7',
     'http://loinc.org|82593-5',
     'http://loinc.org|55018-6',
+    'http://loinc.org|97073-1',
   ].join(","));
 
   client.request("Observation?" + query, {
@@ -98,7 +99,7 @@ FHIR.oauth2.ready().then(function(client) {
       var flu_vaccine = byCodes('72058-1');
       var flu_vaccine1 = byCodes('55018-6');
       var weight = byCodes('29463-7');
-      var vaccines = byCodes('82593-5');
+      var covid_vaccine = byCodes('97073-1');
 
       console.log(ob)
       // create patient object
@@ -108,7 +109,7 @@ FHIR.oauth2.ready().then(function(client) {
       //Display data 
       document.getElementById('weight').innerHTML = getMaxValue(getMaxDate(weight), weight);
       document.getElementById('flu_vaccine').innerHTML = flu_vaccine1;
-   
+      document.getElementById('covid_vaccine').innerHTML = covid_vaccine;
       
 
      
