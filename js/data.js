@@ -87,6 +87,7 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|72058-1',
     'http://loinc.org|29463-7',
     'http://loinc.org|82593-5',
+    'http://loinc.org|55018-6',
   ].join(","));
 
   client.request("Observation?" + query, {
@@ -97,6 +98,7 @@ FHIR.oauth2.ready().then(function(client) {
       // group all of the observation resoruces by type into their own
       var byCodes = client.byCodes(ob, 'code');
       var flu_vaccine = byCodes('72058-1');
+      var flu_vaccine1 = byCodes('55018-6');
       var weight = byCodes('29463-7');
       var vaccines = byCodes('82593-5');
 
@@ -107,7 +109,10 @@ FHIR.oauth2.ready().then(function(client) {
       //TO-DO: Finish obtaining latest weight and display
       console.log("weight:" + getQuantityValueAndUnit(weight[0]))
       console.log(getMaxValue(getMaxDate(weight), weight))
-    
+      
+      
+      //Display data 
+      document.getElementById('flu_vaccine').innerHTML = flu_vaccine1;
    
       
 
