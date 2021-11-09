@@ -60,8 +60,6 @@ function getMaxValue(max_date, ob_arr) {
   
   for(i=0; i < ob_arr.length; i++){
     if(new Date(ob_arr[i].effectiveDateTime).getTime() == max_date.getTime()){
-      console.log('test')
-      console.log(new Date(ob_arr[i].effectiveDateTime))
       return getQuantityValueAndUnit(ob_arr[i])
     }
   }
@@ -112,6 +110,7 @@ FHIR.oauth2.ready().then(function(client) {
       
       
       //Display data 
+      document.getElementById('weight').innerHTML = weight;
       document.getElementById('flu_vaccine').innerHTML = flu_vaccine1;
    
       
