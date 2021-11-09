@@ -61,6 +61,14 @@ body {
     background-color: #515158;
   }
   
+  .mini-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #515158;
+  }
+
 .card {
     display: flex;
     flex-direction: column;
