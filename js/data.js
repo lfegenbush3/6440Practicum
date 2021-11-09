@@ -84,6 +84,8 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|82593-5',
     'http://loinc.org|55018-6',
     'http://loinc.org|97073-1',
+    'http://loinc.org|77353-1', //Colon cancer screening, noninvasive
+    'http://loinc.org|LP6191-3', //Colon cancer screening, colonoscopy
   ].join(","));
 
   client.request("Observation?" + query, {
@@ -112,12 +114,16 @@ FHIR.oauth2.ready().then(function(client) {
         document.getElementById('flu_vaccine').innerHTML = flu_vaccine;
       }
       
-      document.getElementById('covid_vaccine').innerHTML = covid_vaccine;
-      
-
+      if (covid_vaccine = 'undefined'){ 
+        document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
+      } else {
+        document.getElementById('covid_vaccine').innerHTML = covid_vaccine;
+      }
      
-      // set patient value parameters to the data pulled from the observation resoruce
-    
+      
+      //Colon Cancer Screening
+      var colon_cancer = byCodes('77353-1');
+      
 
     });
   }).catch(console.error);
