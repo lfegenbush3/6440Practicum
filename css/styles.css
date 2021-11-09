@@ -65,8 +65,6 @@ body {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    column-gap: 10px;
-    margin: 10px;
     justify-content: space-between;
     padding: 10px;
     background-color: #181892;
