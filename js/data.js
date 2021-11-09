@@ -104,13 +104,9 @@ FHIR.oauth2.ready().then(function(client) {
       // create patient object
       var p = defaultPatient();
 
-      //TO-DO: Finish obtaining latest weight and display
-      //console.log("weight:" + getQuantityValueAndUnit(weight[0]))
-      console.log(getMaxValue(getMaxDate(weight), weight))
-      
       
       //Display data 
-      document.getElementById('weight').innerHTML = weight;
+      document.getElementById('weight').innerHTML = getMaxValue(getMaxDate(weight), weight);
       document.getElementById('flu_vaccine').innerHTML = flu_vaccine1;
    
       
