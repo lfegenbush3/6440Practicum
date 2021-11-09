@@ -59,8 +59,8 @@ function getMaxValue(max_date, ob_arr) {
   console.log(max_date)
   
   for(i=0; i < ob_arr.length; i++){
-    console.log(ob_arr[i].effectiveDateTime)
-    if(ob_arr[i].effectiveDateTime == max_date){
+    console.log(new Date (ob_arr[i].effectiveDateTime))
+    if(new Date(ob_arr[i].effectiveDateTime) == max_date){
       console.log(ob_arr[i])
       return getQuantityValueAndUnit(ob_arr[i])
     }
