@@ -26,12 +26,12 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 28px;
-    background-color: #0a3253;
+    background-color: #d6d3d8;
   }
   
   .main {
     grid-area: main;
-    background-color: #0d8fc2;
+    background-color: #91b89e;
   }
 
   .main-header {
@@ -40,7 +40,7 @@ body {
     margin: 20px;
     padding: 20px;
     height: 150px;
-    background-color: #e3e4e6;
+    background-color: #5f6661;
     color: slategray;
   }
   
