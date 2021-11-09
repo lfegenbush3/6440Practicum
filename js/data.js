@@ -1,5 +1,5 @@
 function getPatientName(pt) {
-    console.log(pt.name);
+    //console.log(pt.name);
     for(i=0; i < pt.name.length; i++){
       if(pt.name[i].use == 'official'){
         return pt.name[i].given + ' ' + pt.name[i].family
@@ -20,7 +20,7 @@ function displayPatient(pt) {
     document.getElementById('patient_name').innerHTML = getPatientName(pt);
    // document.getElementById('gender').innerHTML = pt.gender;
     document.getElementById('dob').innerHTML = pt.birthDate;
-    console.log("Patient Name " + getPatientName(pt))
+    //console.log("Patient Name " + getPatientName(pt))
 }
 
 function defaultPatient() {
@@ -47,17 +47,14 @@ function getQuantityValueAndUnit(ob) {
 
 function getMaxDate(ob_arr) {
   var dates = [];
-
   for(i=0; i < ob_arr.length; i++){
     dates.push(new Date(ob_arr[i].effectiveDateTime))
   }
-  
   return new Date(Math.max.apply(null, dates));
 }
 
 function getMaxValue(max_date, ob_arr) {
-  console.log(max_date)
-  
+  //console.log(max_date)
   for(i=0; i < ob_arr.length; i++){
     if(new Date(ob_arr[i].effectiveDateTime).getTime() == max_date.getTime()){
       return getQuantityValueAndUnit(ob_arr[i])
