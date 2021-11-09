@@ -59,9 +59,9 @@ function getMaxValue(max_date, ob_arr) {
   console.log(max_date)
   
   for(i=0; i < ob_arr.length; i++){
-    console.log(new Date (ob_arr[i].effectiveDateTime))
     if(new Date(ob_arr[i].effectiveDateTime) == max_date){
-      console.log(getQuantityValueAndUnit(ob_arr[i]))
+      console.log('test')
+      console.log(new Date(ob_arr[i].effectiveDateTime))
       return getQuantityValueAndUnit(ob_arr[i])
     }
   }
@@ -107,7 +107,7 @@ FHIR.oauth2.ready().then(function(client) {
       var p = defaultPatient();
 
       //TO-DO: Finish obtaining latest weight and display
-      console.log("weight:" + getQuantityValueAndUnit(weight[0]))
+      //console.log("weight:" + getQuantityValueAndUnit(weight[0]))
       console.log(getMaxValue(getMaxDate(weight), weight))
       
       
