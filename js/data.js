@@ -17,7 +17,6 @@ function getPatientName(pt) {
    //}
 }
 
-
 function displayPatient(pt) {
     document.getElementById('patient_name').innerHTML = getPatientName(pt);
    // document.getElementById('gender').innerHTML = pt.gender;
@@ -147,8 +146,7 @@ FHIR.oauth2.ready().then(function(client) {
       }
      
       //Adult health indicators and prevention data
-      console.log(client.patient.gender)
-      console.log(client.patient)
+      console.log(client.patient.id)
       //Colon Cancer Screening
       var colon_cancer = byCodes('77353-1');
       
