@@ -134,13 +134,14 @@ FHIR.oauth2.ready().then(function(client) {
       var weight = byCodes('29463-7');
       var systolicbp = getBloodPressureValue(byCodes('55284-4'), '8480-6');
       var diastolicbp = getBloodPressureValue(byCodes('55284-4'), '8462-4');
-
+      console.log(systolicbp)
+      console.log(diastolicbp)
       document.getElementById('weight').innerHTML = getMaxValue(getMaxDate(weight), weight);
       document.getElementById('weight_date').innerHTML = getMaxDate(weight).toDateString();
       document.getElementById('systolicbp').innerHTML = systolicbp;
       document.getElementById('diastolicbp').innerHTML = diastolicbp;
 
-      console.log(diastolicbp)
+      
       //Display vaccine data
       if (flu_vaccine = 'undefined'){ 
         document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
