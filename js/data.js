@@ -154,7 +154,7 @@ FHIR.oauth2.ready().then(function(client) {
       //Adult health indicators and prevention data
       if (p.age > 17){
         var glucose = byCodes('2339-0');
-        document.getElementById('glucose').innerHTML = glucose;
+        document.getElementById('glucose').innerHTML = glucose.valueQuantity.value;
         var diabetes = byCodes('33248-6');
         console.log(diabetes)
       }
