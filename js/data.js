@@ -82,6 +82,7 @@ FHIR.oauth2.ready().then(function(client) {
   client.request(`Patient/${client.patient.id}`).then(
     function(patient) {
       p.gender = patient.gender;
+      console.log(patient.birthDate)
       var date_diff = Date.now() - patient.birthDate.getTime();
       var age = newDate(date_diff)
       p.age = Math.abs(age.getUTCFullYear()-1970)
