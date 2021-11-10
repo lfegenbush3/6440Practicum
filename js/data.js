@@ -144,7 +144,7 @@ FHIR.oauth2.ready().then(function(client) {
       }
      
       //Adult health indicators and prevention data
-       console.log(client.patient)
+    
       //Colon Cancer Screening
       var colon_cancer = byCodes('77353-1');
       
