@@ -104,9 +104,10 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|55284-4', //Blood Pressure
     'http://loinc.org|8480-6', //Blood Pressure
     'http://loinc.org|8462-4', //Blood Pressure
+    'http://loinc.org|74774-1', //Glucose
     'http://loinc.org|55018-6', //Flu vaccine
     'http://loinc.org|97073-1', //Covid vaccine
-    'http://loinc.org|97073-1',
+    'http://loinc.org|97073-1', 
     'http://loinc.org|77353-1', //Colon cancer screening, noninvasive
     'http://loinc.org|LP6191-3', //Colon cancer screening, colonoscopy
   ].join(","));
@@ -151,7 +152,8 @@ FHIR.oauth2.ready().then(function(client) {
      
       //Adult health indicators and prevention data
       if (p.age > 17){
-        console.log("here")
+        var glucose = byCodes('74774-1');
+        document.getElementById('glucose').innerHTML = glucose;
       }
       //Colon Cancer Screening
       var colon_cancer = byCodes('77353-1');
