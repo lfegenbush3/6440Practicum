@@ -59,6 +59,15 @@ body {
     justify-content: space-between;
     padding: 20px;
     background-color: #515158;
+    grid-row:1
+  }
+  .small-card-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #515158;
+    grid-row:2
   }
   
   .mini-card {

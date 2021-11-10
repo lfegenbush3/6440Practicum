@@ -154,8 +154,6 @@ FHIR.oauth2.ready().then(function(client) {
       //Adult health indicators and prevention data
       if (p.age > 17){
         var glucose = byCodes('2339-0');
-        console.log(getMaxValue(getMaxDate(glucose), glucose))
-        console.log(glucose[0].valueQuantity)
         document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
         var diabetes = byCodes('33248-6');
         console.log(diabetes)
