@@ -104,7 +104,7 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|55284-4', //Blood Pressure
     'http://loinc.org|8480-6', //Blood Pressure
     'http://loinc.org|8462-4', //Blood Pressure
-    'http://loinc.org|74774-1', //Glucose
+    'http://loinc.org|2339-0', //Glucose
     'http://loinc.org|55018-6', //Flu vaccine
     'http://loinc.org|97073-1', //Covid vaccine
     'http://loinc.org|97073-1', 
