@@ -17,6 +17,9 @@ function displayPatient(pt) {
 
 function defaultPatient() {
     return {
+      gender: {
+        value = ''
+      },
       flu_vaccine: {
         value: ''
       },
@@ -75,10 +78,8 @@ FHIR.oauth2.ready().then(function(client) {
   // get patient object and then display its demographics info in the banner
   client.request(`Patient/${client.patient.id}`).then(
     function(patient) {
-      console.log(patient.name)
-      console.log(patient)
-      console.log(patient.birthDate)
       displayPatient(patient);
+      p.gender = patient.gender;
     }
   );
   // get observation resoruce values
