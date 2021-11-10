@@ -18,7 +18,7 @@ function displayPatient(pt) {
 function defaultPatient() {
     return {
       gender: {
-        value = ''
+        value: ''
       },
       flu_vaccine: {
         value: ''
