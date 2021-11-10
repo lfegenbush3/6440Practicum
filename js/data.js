@@ -160,7 +160,11 @@ FHIR.oauth2.ready().then(function(client) {
       //Adult health indicators and prevention data
       if (p.age > 17){
         var glucose = byCodes('2339-0');
-        document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
+        if (glucose = 'undefined'){
+          document.getElementById('glucose').innerHTML = 'No Recent Measurement'
+        } else{
+          document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
+        }
         var diabetes = byCodes('33248-6');
         console.log(diabetes)
       }
