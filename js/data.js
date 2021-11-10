@@ -86,7 +86,7 @@ FHIR.oauth2.ready().then(function(client) {
     }
   );
   // get observation resoruce values
-  // you will need to update the below to retrive the weight and height values
+
   var query = new URLSearchParams();
 
   query.set("patient", client.patient.id);
@@ -147,7 +147,7 @@ FHIR.oauth2.ready().then(function(client) {
       }
      
       //Adult health indicators and prevention data
-      console.log(client.patient.gender)
+      console.log(client.patient)
       //Colon Cancer Screening
       var colon_cancer = byCodes('77353-1');
       
