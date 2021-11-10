@@ -20,6 +20,9 @@ function defaultPatient() {
       gender: {
         value: ''
       },
+      age: {
+        value: ''
+      },
       flu_vaccine: {
         value: ''
       },
@@ -79,9 +82,10 @@ FHIR.oauth2.ready().then(function(client) {
   client.request(`Patient/${client.patient.id}`).then(
     function(patient) {
       p.gender = patient.gender;
-      console.log(patient);
-      displayPatient(patient);
-      
+      var date_diff = Date.now() - patient.birthDate.getTime();
+      var age = newDate(date_diff)
+      p.age = Math.abs(age.getUTCFullYear()-1970)
+      displayPatient(patient); 
     }
   );
   // get observation resoruce values
@@ -145,7 +149,9 @@ FHIR.oauth2.ready().then(function(client) {
       }
      
       //Adult health indicators and prevention data
-    
+      if (p.age > 17){
+        console.log("here")
+      }
       //Colon Cancer Screening
       var colon_cancer = byCodes('77353-1');
       
