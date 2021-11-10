@@ -166,7 +166,7 @@ FHIR.oauth2.ready().then(function(client) {
         } else{
           document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
         }
-        var diabetes = byCodes('33248-6');
+        var diabetes = byCodes('44054006');
         console.log(diabetes)
       }
       //Colon Cancer Screening
