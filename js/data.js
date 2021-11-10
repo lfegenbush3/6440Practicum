@@ -22,7 +22,6 @@ function displayPatient(pt) {
     document.getElementById('patient_name').innerHTML = getPatientName(pt);
    // document.getElementById('gender').innerHTML = pt.gender;
     document.getElementById('dob').innerHTML = pt.birthDate;
-    //console.log("Patient Name " + getPatientName(pt))
 }
 
 function defaultPatient() {
@@ -79,12 +78,12 @@ function getBloodPressureValue(BPObservations, typeOfPressure) {
   });
 }
 
+
 FHIR.oauth2.ready().then(function(client) {
   // get patient object and then display its demographics info in the banner
   client.request(`Patient/${client.patient.id}`).then(
     function(patient) {
       displayPatient(patient);
-      //console.log(patient);
     }
   );
   // get observation resoruce values
@@ -99,9 +98,9 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|72058-1',
     'http://loinc.org|29463-7', //Body Weight Measured
     'http://loinc.org|82593-5',
-    'http://loinc.org|55284-4',
-    'http://loinc.org|8480-6',
-    'http://loinc.org|8462-4',
+    'http://loinc.org|55284-4', //Blood Pressure
+    'http://loinc.org|8480-6', //Blood Pressure
+    'http://loinc.org|8462-4', //Blood Pressure
     'http://loinc.org|55018-6', //Flu vaccine
     'http://loinc.org|97073-1', //Covid vaccine
     'http://loinc.org|97073-1',
@@ -134,7 +133,7 @@ FHIR.oauth2.ready().then(function(client) {
       document.getElementById('systolicbp').innerHTML = systolicbp;
       document.getElementById('diastolicbp').innerHTML = diastolicbp;
 
-
+      //Display vaccine data
       if (flu_vaccine = 'undefined'){ 
         document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
       } else {
@@ -147,7 +146,9 @@ FHIR.oauth2.ready().then(function(client) {
         document.getElementById('covid_vaccine').innerHTML = covid_vaccine;
       }
      
-      
+      //Adult health indicators and prevention data
+      console.log(patient.gender)
+      console.log(patient)
       //Colon Cancer Screening
       var colon_cancer = byCodes('77353-1');
       
