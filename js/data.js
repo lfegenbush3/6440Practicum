@@ -140,8 +140,8 @@ FHIR.oauth2.ready().then(function(client) {
       console.log(diastolicbp)
       document.getElementById('weight').innerHTML = getMaxValue(getMaxDate(weight), weight);
       document.getElementById('weight_date').innerHTML = getMaxDate(weight).toDateString();
-      document.getElementById('systolicbp').innerHTML = systolicbp;
-      document.getElementById('diastolicbp').innerHTML = diastolicbp;
+      document.getElementById('systolicbp').innerHTML = getMaxValue(getMaxDate(systolicbp), systolicbp);
+      document.getElementById('diastolicbp').innerHTML = getMaxValue(getMaxDate(diastolicbp), diastolicbp);
 
       
       //Display vaccine data
