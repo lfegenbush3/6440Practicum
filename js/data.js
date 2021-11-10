@@ -80,7 +80,7 @@ FHIR.oauth2.ready().then(function(client) {
     function(patient) {
       displayPatient(patient);
       p.gender = patient.gender;
-      console.log(patient)
+      console.log(patient.birthDate)
     }
   );
   // get observation resoruce values
