@@ -90,6 +90,7 @@ FHIR.oauth2.ready().then(function(client) {
   var query = new URLSearchParams();
 
   query.set("patient", client.patient.id);
+  query.set("patient gender", client.patient.gender);
   query.set("_count", 100);
   query.set("_sort", "-date");
   query.set("code", [
@@ -146,7 +147,7 @@ FHIR.oauth2.ready().then(function(client) {
       }
      
       //Adult health indicators and prevention data
-      console.log(client.patient.id)
+      console.log(client.patient.gender)
       //Colon Cancer Screening
       var colon_cancer = byCodes('77353-1');
       
