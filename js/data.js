@@ -61,6 +61,8 @@ function getMaxValue(max_date, ob_arr) {
 }
 
 function getBloodPressureValue(BPObservations, typeOfPressure) {
+  console.log(BPObservations);
+  console.log(typeOfPressure)
   var formattedBPObservations = [];
   BPObservations.forEach(function(observation) {
     var BP = observation.component.find(function(component) {
