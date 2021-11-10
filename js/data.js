@@ -104,7 +104,7 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|55284-4', //Blood Pressure
     'http://loinc.org|8480-6', //Blood Pressure
     'http://loinc.org|8462-4', //Blood Pressure
-    'http://loinc.org|75864-9', //Glucose
+    'http://loinc.org|2339-0', //Glucose
     'http://loinc.org|33248-6',//Diabetes status
     'http://loinc.org|55018-6', //Flu vaccine
     'http://loinc.org|97073-1', //Covid vaccine
@@ -153,7 +153,7 @@ FHIR.oauth2.ready().then(function(client) {
      
       //Adult health indicators and prevention data
       if (p.age > 17){
-        var glucose = byCodes('75864-9');
+        var glucose = byCodes('2339-0');
         document.getElementById('glucose').innerHTML = glucose;
         var diabetes = byCodes('33248-6');
         console.log(diabetes)
