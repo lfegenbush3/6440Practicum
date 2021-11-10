@@ -1,3 +1,5 @@
+//adapted from the cerner smart on fhir guide. updated to utalize client.js v2 library and FHIR R4 + CS6440 Lab4
+
 function getPatientName(pt) {
     //console.log(pt.name);
     for(i=0; i < pt.name.length; i++){
@@ -62,6 +64,20 @@ function getMaxValue(max_date, ob_arr) {
   }
 }
 
+function getBloodPressureValue(BPObservations, typeOfPressure) {
+  var formattedBPObservations = [];
+  BPObservations.forEach(function(observation) {
+    var BP = observation.component.find(function(component) {
+      return component.code.coding.find(function(coding) {
+        return coding.code == typeOfPressure;
+      });
+    });
+    if (BP) {
+      observation.valueQuantity = BP.valueQuantity;
+      formattedBPObservations.push(observation);
+    }
+  });
+
 FHIR.oauth2.ready().then(function(client) {
   // get patient object and then display its demographics info in the banner
   client.request(`Patient/${client.patient.id}`).then(
@@ -80,9 +96,10 @@ FHIR.oauth2.ready().then(function(client) {
   query.set("code", [
     'http://loinc.org|58131-4', 
     'http://loinc.org|72058-1',
-    'http://loinc.org|29463-7',
+    'http://loinc.org|29463-7', //Body Weight Measured
     'http://loinc.org|82593-5',
-    'http://loinc.org|55018-6',
+    'http://loinc.org|55018-6', //Flu vaccine
+    'http://loinc.org|97073-1', //Covid vaccine
     'http://loinc.org|97073-1',
     'http://loinc.org|77353-1', //Colon cancer screening, noninvasive
     'http://loinc.org|LP6191-3', //Colon cancer screening, colonoscopy
@@ -96,17 +113,22 @@ FHIR.oauth2.ready().then(function(client) {
       // group all of the observation resoruces by type into their own
       var byCodes = client.byCodes(ob, 'code');
       var flu_vaccine = byCodes('55018-6');
-      var weight = byCodes('29463-7');
+      
       var covid_vaccine = byCodes('97073-1');
 
       console.log(ob)
       // create patient object
       var p = defaultPatient();
-
       
-      //Display data 
+      //Display vitals data 
+      var weight = byCodes('29463-7');
+      var systolicbp = getBloodPressureValue(byCodes('55284-4'), '8480-6');
+      var diastolicbp = getBloodPressureValue(byCodes('55284-4'), '8462-4');
       document.getElementById('weight').innerHTML = getMaxValue(getMaxDate(weight), weight);
-      document.getElementById('weight_date').innerHTML = getMaxDate(weight);
+      document.getElementById('weight_date').innerHTML = getMaxDate(weight).toDateString();
+      document.getElementById('systolicbp').innerHTML = systolicbp;
+      document.getElementById('diastolicbp').innerHTML = diastolicbp;
+
 
       if (flu_vaccine = 'undefined'){ 
         document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
