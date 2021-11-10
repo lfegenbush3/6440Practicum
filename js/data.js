@@ -7,14 +7,6 @@ function getPatientName(pt) {
         return pt.name[i].given + ' ' + pt.name[i].family
       }
     }
-    //if (pt.name) {
-    //  var names = pt.name.map(function(name) {
-    //    return name.given.join(" ") + " " + name.family; 
-    //    })
-    //  return names.join(" / ")
-    //} else {
-    //  return "anonymous";
-   //}
 }
 
 function displayPatient(pt) {
@@ -77,6 +69,7 @@ function getBloodPressureValue(BPObservations, typeOfPressure) {
   });
 }
 
+var p = defaultPatient();
 
 FHIR.oauth2.ready().then(function(client) {
   // get patient object and then display its demographics info in the banner
@@ -93,7 +86,6 @@ FHIR.oauth2.ready().then(function(client) {
   var query = new URLSearchParams();
 
   query.set("patient", client.patient.id);
-  query.set("patient gender", client.patient.gender);
   query.set("_count", 100);
   query.set("_sort", "-date");
   query.set("code", [
@@ -124,7 +116,7 @@ FHIR.oauth2.ready().then(function(client) {
 
       console.log(ob)
       // create patient object
-      var p = defaultPatient();
+      console.log(p)
       
       //Display vitals data 
       var weight = byCodes('29463-7');
