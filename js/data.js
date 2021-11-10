@@ -152,7 +152,7 @@ FHIR.oauth2.ready().then(function(client) {
      
       //Adult health indicators and prevention data
       if (p.age > 17){
-        var glucose = byCodes('74774-1');
+        var glucose = byCodes('75864-9');
         document.getElementById('glucose').innerHTML = glucose;
       }
       //Colon Cancer Screening
