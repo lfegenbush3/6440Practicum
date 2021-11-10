@@ -138,7 +138,7 @@ FHIR.oauth2.ready().then(function(client) {
       document.getElementById('systolicbp').innerHTML = systolicbp;
       document.getElementById('diastolicbp').innerHTML = diastolicbp;
 
-      console.log(systolicbp)
+      console.log(diastolicbp)
       //Display vaccine data
       if (flu_vaccine = 'undefined'){ 
         document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
