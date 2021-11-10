@@ -78,9 +78,10 @@ FHIR.oauth2.ready().then(function(client) {
   // get patient object and then display its demographics info in the banner
   client.request(`Patient/${client.patient.id}`).then(
     function(patient) {
+      p.gender = 'Male';
+      console.log(patient.birthDate);
       displayPatient(patient);
-      p.gender = patient.gender;
-      console.log(patient.birthDate)
+      
     }
   );
   // get observation resoruce values
