@@ -105,6 +105,7 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|8480-6', //Blood Pressure
     'http://loinc.org|8462-4', //Blood Pressure
     'http://loinc.org|75864-9', //Glucose
+    'http://loinc.org|33248-6',//Diabetes status
     'http://loinc.org|55018-6', //Flu vaccine
     'http://loinc.org|97073-1', //Covid vaccine
     'http://loinc.org|97073-1', 
@@ -154,6 +155,8 @@ FHIR.oauth2.ready().then(function(client) {
       if (p.age > 17){
         var glucose = byCodes('75864-9');
         document.getElementById('glucose').innerHTML = glucose;
+        var diabetes = byCodes('33248-6');
+        console.log(diabetes)
       }
       //Colon Cancer Screening
       var colon_cancer = byCodes('77353-1');
