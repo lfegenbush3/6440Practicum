@@ -99,6 +99,9 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|72058-1',
     'http://loinc.org|29463-7', //Body Weight Measured
     'http://loinc.org|82593-5',
+    'http://loinc.org|55284-4',
+    'http://loinc.org|8480-6',
+    'http://loinc.org|8462-4',
     'http://loinc.org|55018-6', //Flu vaccine
     'http://loinc.org|97073-1', //Covid vaccine
     'http://loinc.org|97073-1',
@@ -125,6 +128,7 @@ FHIR.oauth2.ready().then(function(client) {
       var weight = byCodes('29463-7');
       var systolicbp = getBloodPressureValue(byCodes('55284-4'), '8480-6');
       var diastolicbp = getBloodPressureValue(byCodes('55284-4'), '8462-4');
+
       document.getElementById('weight').innerHTML = getMaxValue(getMaxDate(weight), weight);
       document.getElementById('weight_date').innerHTML = getMaxDate(weight).toDateString();
       document.getElementById('systolicbp').innerHTML = systolicbp;
