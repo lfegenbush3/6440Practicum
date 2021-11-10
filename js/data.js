@@ -83,6 +83,7 @@ FHIR.oauth2.ready().then(function(client) {
   client.request(`Patient/${client.patient.id}`).then(
     function(patient) {
       displayPatient(patient);
+      console.log(patient)
     }
   );
   // get observation resoruce values
