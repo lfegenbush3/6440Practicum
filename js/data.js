@@ -102,7 +102,7 @@ FHIR.oauth2.ready().then(function(client) {
     for(i in imm.entry[0].resource.vaccineCode.coding){
       if(imm.entry[i].resource.vaccineCode.coding[i].code == '208'){
         covid_vaccine = imm.entry[0].resource.date;
-        document.getElementById('covid_vaccine').innerHTML = covid_vaccine;
+        document.getElementById('covid_vaccine').innerHTML = covid_vaccine.toDateString();
       } else {
         document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
       }
