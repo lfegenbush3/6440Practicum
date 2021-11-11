@@ -129,8 +129,6 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|8462-4', //Blood Pressure
     'http://loinc.org|2339-0', //Glucose
     'http://loinc.org|33248-6',//Diabetes status
-    'http://loinc.org|55018-6', //Flu vaccine
-    'http://loinc.org|97073-1', //Covid vaccine
     'http://loinc.org|97073-1', 
     'http://loinc.org|77353-1', //Colon cancer screening, noninvasive
     'http://loinc.org|LP6191-3', //Colon cancer screening, colonoscopy
@@ -174,7 +172,7 @@ FHIR.oauth2.ready().then(function(client) {
 
       // TO DO: Get conditions, not obs
         var diabetes = byCodes('44054006');
-        console.log(diabetes)
+      //  console.log(diabetes)
       }
       //Colon Cancer Screening
       var colon_cancer = byCodes('77353-1');
