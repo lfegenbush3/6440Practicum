@@ -94,9 +94,8 @@ FHIR.oauth2.ready().then(function(client) {
     }
   );
   // get observation resoruce values
-  client.request("Immunization" + query, {
-    pageLimit: 0,
-    flat: true
+  client.request(`Immunization/${client.patient.id}`, {
+    resolveReferences: ['identifier', 'status']
   }).then(function(imm){
     console.log(imm)
   }
