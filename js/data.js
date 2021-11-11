@@ -98,10 +98,10 @@ FHIR.oauth2.ready().then(function(client) {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
     console.log(imm.entry[0])
-    console.log(imm.entry[0].resource.date.toDateString())
+    console.log(imm.entry[0].resource.date)
     for(i in imm.entry[0].resource.vaccineCode.coding){
       if(imm.entry[i].resource.vaccineCode.coding[i].code == '208'){
-        covid_vaccine = imm.entry[0].resource.date.toDateString();
+        covid_vaccine = imm.entry[0].resource.date;
         document.getElementById('covid_vaccine').innerHTML = covid_vaccine;
       } else {
         document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
