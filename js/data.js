@@ -99,16 +99,18 @@ FHIR.oauth2.ready().then(function(client) {
   }).then(function(imm){
     console.log(imm.entry[0])
     console.log(imm.entry[0].resource.vaccineCode.coding[0].code)
-    if(imm.entry[0].resource.vaccineCode.coding.code == '208'){
-      document.getElementById('covid_vaccine').innerHTML = covid_vaccine;
-    } else {
-      document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
-    }
-    if(imm.entry[0].resource.vaccineCode.coding.code == '150'){
-      document.getElementById('flu_vaccine').innerHTML = flu_vaccine;
-    } else {
-      document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
-    }
+    for(i in imm.entry[0].resource.vaccineCode.coding){
+      if(imm.entry[i].resource.vaccineCode.coding[i].code == '208'){
+        document.getElementById('covid_vaccine').innerHTML = covid_vaccine;
+      } else {
+        document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
+      }
+      if(imm.entry[i].resource.vaccineCode.coding[i].code == '150'){
+        document.getElementById('flu_vaccine').innerHTML = flu_vaccine;
+      } else {
+        document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
+      }
+  }
   }         
         
   );
