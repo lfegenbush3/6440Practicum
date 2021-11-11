@@ -98,7 +98,11 @@ FHIR.oauth2.ready().then(function(client) {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
     console.log(imm)
-    console.log(imm.entry[0].resource)
+    console.log(imm.entry[0].resource.vaccineCode.coding)
+    var byCodes = client.byCodes(imm, 'code');
+    var flu_vaccine = byCodes('140');
+    var covid_vaccine = byCodes('208');
+
         //Display vaccine data
         if (flu_vaccine = 'undefined'){ 
           document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
