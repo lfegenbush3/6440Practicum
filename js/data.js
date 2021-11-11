@@ -98,7 +98,7 @@ FHIR.oauth2.ready().then(function(client) {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
     console.log(imm)
-    console.log(imm.entry[0].resource.vaccineCode.coding)
+    console.log(imm.entry[0].resource.vaccineCode.coding.code)
     if(imm.entry[0].resource.vaccineCode.coding.code == '208'){
       document.getElementById('covid_vaccine').innerHTML = covid_vaccine;
     } else {
