@@ -98,6 +98,18 @@ FHIR.oauth2.ready().then(function(client) {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
     console.log(imm)
+        //Display vaccine data
+        if (flu_vaccine = 'undefined'){ 
+          document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
+        } else {
+          document.getElementById('flu_vaccine').innerHTML = flu_vaccine;
+        }
+        
+        if (covid_vaccine = 'undefined'){ 
+          document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
+        } else {
+          document.getElementById('covid_vaccine').innerHTML = covid_vaccine;
+        }
   }
   );
 
@@ -147,21 +159,8 @@ FHIR.oauth2.ready().then(function(client) {
       document.getElementById('weight').innerHTML = getMaxValue(getMaxDate(weight), weight);
       document.getElementById('weight_date').innerHTML = getMaxDate(weight).toDateString();
       document.getElementById('systolicbp').innerHTML = getMaxValue(getMaxDate(systolicbp), systolicbp);
-      document.getElementById('diastolicbp').innerHTML = getMaxValue(getMaxDate(diastolicbp), diastolicbp);
-
-      
-      //Display vaccine data
-      if (flu_vaccine = 'undefined'){ 
-        document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
-      } else {
-        document.getElementById('flu_vaccine').innerHTML = flu_vaccine;
-      }
-      
-      if (covid_vaccine = 'undefined'){ 
-        document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
-      } else {
-        document.getElementById('covid_vaccine').innerHTML = covid_vaccine;
-      }
+      document.getElementById('diastolicbp').innerHTML = getMaxValue(getMaxDate(diastolicbp), diastolicbp);      
+  
      
       //Adult health indicators and prevention data
       if (p.age > 17){
