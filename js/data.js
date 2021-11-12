@@ -131,7 +131,7 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|8480-6', //Blood Pressure
     'http://loinc.org|8462-4', //Blood Pressure
     'http://loinc.org|2339-0', //Glucose
-    'http://loinc.org|33248-6',//Diabetes status
+    'http://loinc.org|33248-6', //Diabetes status
     'http://loinc.org|97073-1', 
     'http://loinc.org|77353-1', //Colon cancer screening, noninvasive
     'http://loinc.org|LP6191-3', //Colon cancer screening, colonoscopy
