@@ -42,7 +42,7 @@ body {
     height: 50px;
     width: 900px;
     background-color: #5f6661;
-    color: rgb(229, 234, 238);
+    color: rgb(255, 255, 255);
     grid-row: 1
   }
   
@@ -74,7 +74,7 @@ body {
   .mini-card {
     display: flex;
     align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    flex-grow: 1; 
     justify-content: space-between;
     padding: 10px;
     background-color: #88BDBC;
