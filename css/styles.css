@@ -37,12 +37,12 @@ body {
   .main-header {
     display: flex;
     justify-content: space-between;
-    margin: 20px;
+    margin: 10px;
     padding: 20px;
     height: 50px;
-    width: 700px;
+    width: 900px;
     background-color: #5f6661;
-    color: slategray;
+    color: rgb(229, 234, 238);
     grid-row: 1
   }
   
