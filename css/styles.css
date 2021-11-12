@@ -43,6 +43,7 @@ body {
     width: 400px;
     background-color: #5f6661;
     color: slategray;
+    grid-row: 1
   }
   
   .main-overview {
@@ -59,7 +60,7 @@ body {
     justify-content: space-between;
     padding: 20px;
     background-color: #112D32;
-    grid-row:1
+    grid-row:2
   }
   .small-card-vax {
     display: flex;
@@ -67,7 +68,7 @@ body {
     justify-content: space-between;
     padding: 20px;
     background-color: #6E6658;
-    grid-row:2
+    grid-row:3
   }
   
   .mini-card {
