@@ -169,6 +169,7 @@ FHIR.oauth2.ready().then(function(client) {
         var glucose = byCodes('2339-0');
         if (glucose = 'undefined'){
           document.getElementById('glucose').style.display = 'none';
+          document.getElementById('glucose_label').style.display = 'none';
         } else{
           document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
         }
