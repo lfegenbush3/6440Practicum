@@ -168,7 +168,7 @@ FHIR.oauth2.ready().then(function(client) {
       if (p.age > 17){
         var glucose = byCodes('2339-0');
         if (glucose = 'undefined'){
-          document.getElementById('glucose').innerHTML = 'No Recent Measurement'
+          document.getElementById('glucose').style.display = 'none';
         } else{
           document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
         }
