@@ -26,12 +26,12 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 28px;
-    background-color: #254E58;
+    background-color: #14A098;
   }
   
   .main {
     grid-area: main;
-    background-color: #88BDBC;
+    background-color: #CCCCCC;
   }
 
   .main-header {
@@ -59,7 +59,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: #112D32;
+    background-color: #CB2D6F;
     grid-row:2
   }
   .small-card-vax {
