@@ -187,7 +187,7 @@ FHIR.oauth2.ready().then(function(client) {
     function addNewWeight() {
       var annotation = "test annotation"
       console.log(annotation)
-      console.log(client.patient.id)
+      console.log("client " + client.patient.id)
       client.update({resource: client.patient.id}).done(function(w){
           
         }); 
