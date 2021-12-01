@@ -54,7 +54,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px;
     background-color: #A9A9A9;
     grid-column:2
   }
@@ -78,7 +78,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px;
     background-color: #A9A9A9;
     grid-column:3
   }
