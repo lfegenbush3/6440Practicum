@@ -41,7 +41,7 @@ body {
     height: 50px;
     width: 1500px;
     background-color: #CAEBF2;
-    color: #484a4d;
+    color: #646668;
     grid-row: 1
   }
   
@@ -72,10 +72,10 @@ body {
   
   .mini-card {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+    grid-template-rows: 1fr;
     align-items: center;
-    justify-content: space-between;
-    padding: 5px;
+    justify-content: stretch;
     background-color: #A9A9A9;
   }
 
