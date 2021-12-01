@@ -44,7 +44,7 @@ body {
 
   .main-header {
     display: flex;
-    grid-area: 1 / 1 / 4 / 2;
+    grid-area: 1 / span 1 / 4 / 2;
     padding: 20px;
     background-color: #CAEBF2;
     color: #646668;
