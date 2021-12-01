@@ -26,7 +26,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 28px;
-    background-color: #FF3B3F;
+    background-color: #A9A9A9;
   }
   
   .main {
@@ -39,9 +39,9 @@ body {
     justify-content: space-between;
     padding: 20px;
     height: 50px;
-    width: 1200px;
+    width: 1500px;
     background-color: #CAEBF2;
-    color: rgb(255, 255, 255);
+    color: #484a4d;
     grid-row: 1
   }
   
