@@ -134,7 +134,6 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|77353-1', //Colon cancer screening, noninvasive
     'http://loinc.org|LP6191-3', //Colon cancer screening, colonoscopy
     'http://loinc.org|54038-5', //Cervical cancer screening
-    'http://snomed.info/sct|44054006' //Diabetes
   ].join(","));
 
   client.request("Observation?" + query, {
