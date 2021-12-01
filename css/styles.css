@@ -59,6 +59,19 @@ body {
     grid-column:2
   }
 
+  .small-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+    grid-auto-rows: 20px;
+  }
+
+  .mini-card {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: #A9A9A9;
+  }
+
   .small-card-prev {
     display: flex;
     align-items: center;
@@ -68,14 +81,6 @@ body {
     grid-column:3
   }
   
-  .mini-card {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(265px, 1fr));
-    grid-template-rows: 1fr;
-    align-items: center;
-    justify-content: stretch;
-    background-color: #A9A9A9;
-  }
 
 .card {
     display: flex;
