@@ -44,11 +44,11 @@ body {
 
   .main-header {
     display: flex;
+    grid-area: 1 / 1 / 4 / 2;
     justify-content: space-between;
     padding: 20px;
     background-color: #CAEBF2;
     color: #646668;
-    grid-column: 1
   }
   
   .small-card-vitals {
@@ -59,7 +59,7 @@ body {
     background-color: #A9A9A9;
     grid-column:2
   }
-  
+
   .small-card-prev {
     display: flex;
     align-items: center;
