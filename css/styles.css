@@ -53,7 +53,7 @@ body {
   .main-header {
     grid-column-start: 1;
     grid-column-end: 1;
-    grid-row-start: 2;
+    grid-row-start: 1;
     grid-row-end: 4;
     padding: 20px;
     background-color: #CAEBF2;
