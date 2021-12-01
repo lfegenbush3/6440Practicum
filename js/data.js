@@ -135,6 +135,7 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|97073-1', 
     'http://loinc.org|77353-1', //Colon cancer screening, noninvasive
     'http://loinc.org|LP6191-3', //Colon cancer screening, colonoscopy
+    'http://loinc.org|54038-5', //Cervical cancer screening
     'http://snomed.info/sct|44054006' //Diabetes
   ].join(","));
 
@@ -173,6 +174,16 @@ FHIR.oauth2.ready().then(function(client) {
         } else{
           document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
         }
+
+        if(p.gender = 'Female'){
+          var cervical_cancer = byCodes('54038-5');
+          if (glucose = 'undefined'){
+            document.getElementById('c_cancer').style.display = 'none';
+            document.getElementById('c_cancer_label').style.display = 'none';
+          } else{
+            document.getElementById('c_cancer').innerHTML = cervical_cancer;
+        }
+      }
 
       // TO DO: Get conditions, not obs
         var diabetes = byCodes('44054006');
