@@ -48,7 +48,7 @@ body {
     padding: 20px;
     background-color: #CAEBF2;
     color: #646668;
-    border-radius: 25px;
+    border-radius: 15px;
   }
   
   .small-card-header {
@@ -57,7 +57,7 @@ body {
     grid-area: 2 / 2 / 1 / 1;
     grid-column:3
   }
-  
+
   .small-card-vitals {
     display: flex;
     align-items: center;
