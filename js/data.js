@@ -188,9 +188,7 @@ FHIR.oauth2.ready().then(function(client) {
       var annotation = "test annotation"
       console.log(annotation)
       console.log("client " + client.patient)
-      client.update({resource: client.patient.id}).done(function(w){
-          
-        }); 
+      client.update({resource: client.patient.id})
     };
   
       //event listner when the add button is clicked to call the function that will add the note to the weight observation
