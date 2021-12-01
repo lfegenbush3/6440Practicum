@@ -13,7 +13,6 @@ body {
   .header-text{
     font-family: Tahoma, Helvetica, sans-serif;
     font-size: 50px;
-    font-style: bold;
   }
   .grid-container {
     display: grid;
