@@ -46,10 +46,12 @@ body {
   .header-text{
     font-family: Tahoma, Helvetica, sans-serif;
     font-size: 50px;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
   }
 
   .main-header {
-    display: flex;
     grid-column-start: 1;
     grid-column-end: 1;
     grid-row-start: 2;
