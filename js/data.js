@@ -97,8 +97,6 @@ FHIR.oauth2.ready().then(function(client) {
   client.request(`Immunization?patient=${client.patient.id}`, {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
-    console.log(imm.entry[0])
-    console.log(imm.entry[0].resource.date)
     for(i in imm.entry[0].resource.vaccineCode.coding){
       if(imm.entry[i].resource.vaccineCode.coding[i].code == '208'){
         covid_vaccine = new Date(imm.entry[0].resource.date);
