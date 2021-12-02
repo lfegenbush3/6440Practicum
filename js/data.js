@@ -172,6 +172,7 @@ FHIR.oauth2.ready().then(function(client) {
           document.getElementById('glucose').innerHTML = 'No Recent Measurement'
         } else{
           document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
+          document.getElementById('glucose_date').innerHTML = getMaxDate(weight).toDateString();
         }
 
         if(p.gender = 'Female'){
