@@ -198,6 +198,10 @@ FHIR.oauth2.ready().then(function(client) {
       // TO DO: Get conditions, not obs
         var diabetes = byCodes('44054006');
       //  console.log(diabetes)
+      } else {
+        document.getElementById('glucose_box').style.display = none
+        document.getElementById('glucose').style.display = none
+        document.getElementById('glucose_date').innerHTML = none
       }
    
 
