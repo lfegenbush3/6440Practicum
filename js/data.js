@@ -209,9 +209,9 @@ FHIR.oauth2.ready().then(function(client) {
         var diabetes = byCodes('44054006');
       //  console.log(diabetes)
       } else {
-        document.getElementById('glucose_box').style.display = "none"
+      
         document.getElementById('glucose').style.display = "none"
-        document.getElementById('glucose_date').style.display = "none"
+        document.getElementById('c_cancer').style.display = "none"
       }
    
 
