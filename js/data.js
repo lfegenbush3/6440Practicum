@@ -163,7 +163,7 @@ FHIR.oauth2.ready().then(function(client) {
       document.getElementById('weight').innerHTML = getMaxValue(getMaxDate(weight), weight);
       document.getElementById('weight_date').innerHTML = getMaxDate(weight).toDateString();
       document.getElementById('systolicbp').innerHTML = systolicbp//getMaxValue(getMaxDate(systolicbp), systolicbp);
-      document.getElementById('diastolicbp').innerHTML = getMaxValue(getMaxDate(diastolicbp), diastolicbp);      
+      document.getElementById('diastolicbp').innerHTML = diastolicbp//getMaxValue(getMaxDate(diastolicbp), diastolicbp);      
   
      
       //Adult health indicators and prevention data
