@@ -170,6 +170,7 @@ FHIR.oauth2.ready().then(function(client) {
         var glucose = byCodes('2339-0');
         if (glucose = 'undefined'){
           document.getElementById('glucose').innerHTML = 'No Recent Measurement'
+          document.getElementById('glucose_date').innerHTML = 'No Recent Measurement'
         } else{
           document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
           document.getElementById('glucose_date').innerHTML = getMaxDate(weight).toDateString();
