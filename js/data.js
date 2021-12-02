@@ -200,7 +200,7 @@ FHIR.oauth2.ready().then(function(client) {
 
             document.getElementById('colon_cancer').innerHTML = 'No Recent Screening';
           } else{
-            document.getElementById('colon_cancer').innerHTML = cervical_cancer;
+            document.getElementById('colon_cancer').innerHTML = ccolonoscopy;
         } 
         }
       }
@@ -212,6 +212,7 @@ FHIR.oauth2.ready().then(function(client) {
       
         document.getElementById('glucose').style.display = "none"
         document.getElementById('c_cancer').style.display = "none"
+        document.getElementById('colon_cancer').style.display = "none"
       }
    
 
