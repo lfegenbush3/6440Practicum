@@ -88,7 +88,7 @@ body {
 
   .mini-card {
     display: flex;
-    align-items: center;
+    align-items: normal;
     padding: 5px;
     background-color: #A9A9A9;
     grid-column-start: auto;

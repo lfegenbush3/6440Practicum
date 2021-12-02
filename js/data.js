@@ -154,17 +154,27 @@ FHIR.oauth2.ready().then(function(client) {
       // create patient object
       console.log(p)
       
-      //Display vitals data 
+      //Display WEIGHT
       var weight = byCodes('29463-7');
+      if (weight = 'undefined') {
+        document.getElementById('weight').innerHTML = 'No Recent Measurement'
+        document.getElementById('weight_date').innerHTML = 'No Recent Measurement' 
+      } else {
+        document.getElementById('weight').innerHTML = getMaxValue(getMaxDate(weight), weight);
+        document.getElementById('weight_date').innerHTML = getMaxDate(weight).toDateString();
+      }
+      //Display BP
       var systolicbp = getBloodPressureValue(byCodes('55284-4'), '8480-6');
       var diastolicbp = getBloodPressureValue(byCodes('55284-4'), '8462-4');
-  
-      document.getElementById('weight').innerHTML = getMaxValue(getMaxDate(weight), weight);
-      document.getElementById('weight_date').innerHTML = getMaxDate(weight).toDateString();
-      document.getElementById('systolicbp').innerHTML = systolicbp;
-      document.getElementById('diastolicbp').innerHTML = diastolicbp;    
-  
-     
+      if (systolicbp = 'undefined') {
+        document.getElementById('systolicbp').innerHTML = 'No Recent Measurement'
+        document.getElementById('diastolicbp').innerHTML = 'No Recent Measurement' 
+      } else {
+        document.getElementById('systolicbp').innerHTML = systolicbp;
+        document.getElementById('diastolicbp').innerHTML = diastolicbp;  
+      }
+      
+       
       //Adult health indicators and prevention data
       if (p.age > 17){
         var glucose = byCodes('2339-0');
