@@ -76,7 +76,7 @@ function getBloodPressureValue(BPObservations, typeOfPressure) {
     }
   });
   console.log(getMaxValue(getMaxDate(formattedBPObservations), formattedBPObservations ))
-  return formattedBPObservations;
+  return getMaxValue(getMaxDate(formattedBPObservations), formattedBPObservations );
 }
 
 var p = defaultPatient();
@@ -162,7 +162,7 @@ FHIR.oauth2.ready().then(function(client) {
   
       document.getElementById('weight').innerHTML = getMaxValue(getMaxDate(weight), weight);
       document.getElementById('weight_date').innerHTML = getMaxDate(weight).toDateString();
-      document.getElementById('systolicbp').innerHTML = getMaxValue(getMaxDate(systolicbp), systolicbp);
+      document.getElementById('systolicbp').innerHTML = systolicbp;
       document.getElementById('diastolicbp').innerHTML = diastolicbp//getMaxValue(getMaxDate(diastolicbp), diastolicbp);      
   
      
