@@ -199,7 +199,7 @@ FHIR.oauth2.ready().then(function(client) {
         document.getElementById('height_date').style.display = "none"
 
         //GLUCOSE
-        var glucose = byCodes('2339-0');
+      /*  var glucose = byCodes('2339-0');
         if (glucose = 'undefined'){
           console.log(glucose)
           document.getElementById('glucose').innerHTML = 'No Recent Measurement'
@@ -207,7 +207,7 @@ FHIR.oauth2.ready().then(function(client) {
         } else{
           document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
           document.getElementById('glucose_date').innerHTML = getMaxDate(glucose).toDateString();
-        }
+        }*/
 
         if(p.gender = 'Female'){
           //CERVICAL CANCER
