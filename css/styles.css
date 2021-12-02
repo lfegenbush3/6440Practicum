@@ -44,7 +44,7 @@ body {
 
   .header-text{
     font-family: Tahoma, Helvetica, sans-serif;
-    font-size: 150px;
+    font-size: 60px;
     grid-column-start: 1;
     grid-column-end: 1;
     grid-row-start: 1;
