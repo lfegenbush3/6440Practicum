@@ -135,7 +135,7 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|33248-6', //Diabetes status
     'http://loinc.org|97073-1', 
     'http://loinc.org|77353-1', //Colon cancer screening, noninvasive
-    'http://loinc.org|LP6191-3', //Colon cancer screening, colonoscopy
+    'http://loinc.org|28023-0', //Colon cancer screening, colonoscopy
     'http://loinc.org|86662-4', //Cervical cancer screening - cervical cytology
   ].join(","));
 
@@ -184,7 +184,7 @@ FHIR.oauth2.ready().then(function(client) {
         }
 
         if (p.age > 44){
-          var colonoscopy
+          var colonoscopy = byCodes('28023-0')
         }
       }
 
