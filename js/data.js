@@ -185,6 +185,11 @@ FHIR.oauth2.ready().then(function(client) {
 
         if (p.age > 44){
           var colonoscopy = byCodes('28023-0')
+          if (colonoscopy = 'undefined'){
+            document.getElementById('colon_cancer').innerHTML = 'No Recent Screening';
+          } else{
+            document.getElementById('colon_cancer').innerHTML = cervical_cancer;
+        }
         }
       }
 
