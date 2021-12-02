@@ -123,7 +123,7 @@ FHIR.oauth2.ready().then(function(client) {
 
   query.set("patient", client.patient.id);
   query.set("_count", 150);
-  query.set("_sort", "-date");
+ // query.set("_sort", "-date");
   query.set("code", [
     'http://loinc.org|58131-4', 
     'http://loinc.org|72058-1',
