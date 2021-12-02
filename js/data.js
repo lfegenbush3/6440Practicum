@@ -217,7 +217,7 @@ FHIR.oauth2.ready().then(function(client) {
 
             document.getElementById('colon_cancer').innerHTML = 'No Recent Screening';
           } else{
-            document.getElementById('colon_cancer').innerHTML = ccolonoscopy;
+            document.getElementById('colon_cancer').innerHTML = colonoscopy;
         } 
         }
       }
