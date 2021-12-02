@@ -189,6 +189,9 @@ FHIR.oauth2.ready().then(function(client) {
            document.getElementById('height_date').innerHTML = getMaxDate(weight).toDateString();
         }
       } else if (p.age > 17) {
+
+        document.getElementById('height').style.display = "none"
+        document.getElementById('height_date').style.display = "none"
         //GLUCOSE
         var glucose = byCodes('2339-0');
         if (glucose = 'undefined'){
