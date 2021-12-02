@@ -73,9 +73,10 @@ function getBloodPressureValue(BPObservations, typeOfPressure) {
     if (BP) {
       observation.valueQuantity = BP.valueQuantity;
       formattedBPObservations.push(observation);
-      console.log(formattedBPObservations)
+      
     }
   });
+  console.log(formattedBPObservations)
   return formattedBPObservations;
 }
 
