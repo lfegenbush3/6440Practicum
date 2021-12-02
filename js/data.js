@@ -192,6 +192,8 @@ FHIR.oauth2.ready().then(function(client) {
         document.getElementById('glucose_date').style.display = "none"
         document.getElementById('c_cancer').style.display = "none"
         document.getElementById('colon_cancer').style.display = "none"
+        document.getElementById('c_cancer_label').style.display = "none"
+        document.getElementById('colon_cancer_label').style.display = "none"
 
       } //Adult health indicators and prevention data 
       else if (p.age > 17) {
