@@ -99,8 +99,6 @@ body {
     color: #646668;
     font-family: Tahoma, Helvetica, sans-serif;
     font-size: larger;
-    grid-column-start: 3;
-    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 1;
     grid-column: 3
@@ -112,7 +110,7 @@ body {
     padding: 10px;
     background-color: #A9A9A9;
     grid-column:3;
-    grid-row-start: 1;
+    grid-row-start: 2;
   }
   
 
