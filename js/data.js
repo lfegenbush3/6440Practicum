@@ -177,9 +177,8 @@ FHIR.oauth2.ready().then(function(client) {
 
         if(p.gender = 'Female'){
           var cervical_cancer = byCodes('54038-5');
-          if (glucose = 'undefined'){
-            document.getElementById('c_cancer').style.display = 'none';
-            document.getElementById('c_cancer_label').style.display = 'none';
+          if (cervical_cancer = 'undefined'){
+            document.getElementById('c_cancer').innerHTML = 'No Recent Screening';
           } else{
             document.getElementById('c_cancer').innerHTML = cervical_cancer;
         }
