@@ -187,9 +187,12 @@ FHIR.oauth2.ready().then(function(client) {
            document.getElementById('height').innerHTML = getMaxValue(getMaxDate(weight), weight);
            document.getElementById('height_date').innerHTML = getMaxDate(weight).toDateString();
         }
+
         document.getElementById('glucose').style.display = "none"
+        document.getElementById('glucose_date').style.display = "none"
         document.getElementById('c_cancer').style.display = "none"
         document.getElementById('colon_cancer').style.display = "none"
+
       } //Adult health indicators and prevention data 
       else if (p.age > 17) {
         document.getElementById('height').style.display = "none"
