@@ -50,7 +50,7 @@ body {
     grid-row-start: 1;
   }
 
-  .main-header {
+  .main-text {
     grid-column-start: 1;
     grid-column-end: 1;
     grid-row-start: 1;
@@ -61,18 +61,7 @@ body {
     border-radius: 15px;
   }
   
-  .small-card-header {
-    color: #646668;
-    font-family: Tahoma, Helvetica, sans-serif;
-    font-size: larger;
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    grid-column: 2
-  }
-
-  .small-card-vitals {
+  .vitals-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -95,22 +84,14 @@ body {
     grid-column-start: auto;
     grid-row-start: auto;
   }
-  .small-card-header-prev {
-    color: #646668;
-    font-family: Tahoma, Helvetica, sans-serif;
-    font-size: larger;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    grid-column: 3
-  }
-  .small-card-prev {
+ 
+  .prev-care-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
     background-color: #A9A9A9;
     grid-column:3;
-    grid-row-start: 2;
   }
   
 
