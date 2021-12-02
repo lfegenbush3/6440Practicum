@@ -187,18 +187,18 @@ FHIR.oauth2.ready().then(function(client) {
            document.getElementById('height').innerHTML = getMaxValue(getMaxDate(weight), weight);
            document.getElementById('height_date').innerHTML = getMaxDate(weight).toDateString();
         }
-        
         document.getElementById('glucose').style.display = "none"
         document.getElementById('c_cancer').style.display = "none"
         document.getElementById('colon_cancer').style.display = "none"
       } //Adult health indicators and prevention data 
       else if (p.age > 17) {
-
         document.getElementById('height').style.display = "none"
         document.getElementById('height_date').style.display = "none"
+
         //GLUCOSE
         var glucose = byCodes('2339-0');
         if (glucose = 'undefined'){
+          console.log(glucose)
           document.getElementById('glucose').innerHTML = 'No Recent Measurement'
           document.getElementById('glucose_date').innerHTML = 'No Recent Measurement'
         } else{
