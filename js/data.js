@@ -137,6 +137,7 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|77353-1', //Colon cancer screening, noninvasive
     'http://loinc.org|28023-0', //Colon cancer screening, colonoscopy
     'http://loinc.org|86662-4', //Cervical cancer screening - cervical cytology
+    'http://loinc.org|8302-2', // Height
   ].join(","));
 
   client.request("Observation?" + query, {
@@ -176,7 +177,20 @@ FHIR.oauth2.ready().then(function(client) {
       
        
       //Adult health indicators and prevention data
-      if (p.age > 17){
+      if (p.age < 18) {
+        document.getElementById('glucose').style.display = "none"
+        document.getElementById('c_cancer').style.display = "none"
+        document.getElementById('colon_cancer').style.display = "none"
+        var weight = byCodes('8302-2');
+        if (weight = 'undefined') {
+          document.getElementById('height').innerHTML = 'No Recent Measurement'
+          document.getElementById('height_date').innerHTML = 'No Recent Measurement' 
+        } else {
+           document.getElementById('height').innerHTML = getMaxValue(getMaxDate(weight), weight);
+           document.getElementById('height_date').innerHTML = getMaxDate(weight).toDateString();
+        }
+      } else if (p.age > 17) {
+        //GLUCOSE
         var glucose = byCodes('2339-0');
         if (glucose = 'undefined'){
           document.getElementById('glucose').innerHTML = 'No Recent Measurement'
@@ -187,6 +201,7 @@ FHIR.oauth2.ready().then(function(client) {
         }
 
         if(p.gender = 'Female'){
+          //CERVICAL CANCER
           var cervical_cancer = byCodes('54038-5');
           if (cervical_cancer = 'undefined'){
             document.getElementById('c_cancer').innerHTML = 'No Recent Screening';
@@ -210,9 +225,7 @@ FHIR.oauth2.ready().then(function(client) {
       //  console.log(diabetes)
       } else {
       
-        document.getElementById('glucose').style.display = "none"
-        document.getElementById('c_cancer').style.display = "none"
-        document.getElementById('colon_cancer').style.display = "none"
+     
       }
    
 
