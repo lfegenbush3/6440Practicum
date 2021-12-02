@@ -57,7 +57,7 @@ body {
     grid-row-end: 4;
     padding: 20px;
     background-color: #CAEBF2;
-    color: #646668;
+    color: #55575a;
     border-radius: 15px;
   }
   
@@ -91,7 +91,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    background-color: #A9A9A9;
+    background-color: #98D8E6;
     border-radius: 5px;
     grid-column:3;
   }
