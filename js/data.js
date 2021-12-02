@@ -75,7 +75,7 @@ function getBloodPressureValue(BPObservations, typeOfPressure) {
       
     }
   });
-  console.log(formattedBPObservations)
+  console.log(formattedBPObservations[0])
   return getQuantityValueAndUnit(formattedBPObservations[0]);
 }
 
