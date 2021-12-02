@@ -97,7 +97,6 @@ FHIR.oauth2.ready().then(function(client) {
   client.request(`Immunization?patient=${client.patient.id}`, {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
-    console.log("imm")
     console.log(imm)
     if(imm.entry[0] == null){
       console.log("true")
