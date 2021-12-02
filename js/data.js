@@ -75,7 +75,6 @@ function getBloodPressureValue(BPObservations, typeOfPressure) {
       
     }
   });
-  console.log(getMaxValue(getMaxDate(formattedBPObservations), formattedBPObservations ))
   return getMaxValue(getMaxDate(formattedBPObservations), formattedBPObservations );
 }
 
