@@ -178,9 +178,8 @@ FHIR.oauth2.ready().then(function(client) {
        
       //Adult health indicators and prevention data
       if (p.age < 18) {
-        document.getElementById('glucose').style.display = "none"
-        document.getElementById('c_cancer').style.display = "none"
-        document.getElementById('colon_cancer').style.display = "none"
+        
+
         var weight = byCodes('8302-2');
         if (weight = 'undefined') {
           document.getElementById('height').innerHTML = 'No Recent Measurement'
@@ -224,7 +223,9 @@ FHIR.oauth2.ready().then(function(client) {
         var diabetes = byCodes('44054006');
       //  console.log(diabetes)
       } else {
-      
+        document.getElementById('glucose').style.display = "none"
+        document.getElementById('c_cancer').style.display = "none"
+        document.getElementById('colon_cancer').style.display = "none"
      
       }
    
