@@ -184,8 +184,8 @@ FHIR.oauth2.ready().then(function(client) {
           document.getElementById('height').innerHTML = 'No Recent Measurement'
           document.getElementById('height_date').innerHTML = 'No Recent Measurement' 
         } else {
-           document.getElementById('height').innerHTML = getMaxValue(getMaxDate(weight), weight);
-           document.getElementById('height_date').innerHTML = getMaxDate(weight).toDateString();
+           document.getElementById('height').innerHTML = getMaxValue(getMaxDate(height), height);
+           document.getElementById('height_date').innerHTML = getMaxDate(height).toDateString();
         }
 
         document.getElementById('glucose').style.display = "none"
@@ -199,7 +199,7 @@ FHIR.oauth2.ready().then(function(client) {
       else if (p.age > 17) {
         document.getElementById('height').style.display = "none"
         document.getElementById('height_date').style.display = "none"
-
+        document.getElementById('height_label').style.display = "none"
         //GLUCOSE
       /*  var glucose = byCodes('2339-0');
         if (glucose = 'undefined'){
