@@ -68,6 +68,7 @@ body {
     padding: 10px;
     background-color: #A9A9A9;
     grid-column: 2;
+    border-radius: 5px;
   }
 
   .small-card-grid {
@@ -91,6 +92,7 @@ body {
     justify-content: space-between;
     padding: 10px;
     background-color: #A9A9A9;
+    border-radius: 5px;
     grid-column:3;
   }
   
