@@ -176,19 +176,20 @@ FHIR.oauth2.ready().then(function(client) {
       }
       
        
-      //Adult health indicators and prevention data
+      //Child health indicators and prevention data
       if (p.age < 18) {
-        
-
-        var weight = byCodes('8302-2');
-        if (weight = 'undefined') {
+        //HEIGHT
+        var height = byCodes('8302-2');
+        if (height = 'undefined') {
           document.getElementById('height').innerHTML = 'No Recent Measurement'
           document.getElementById('height_date').innerHTML = 'No Recent Measurement' 
         } else {
            document.getElementById('height').innerHTML = getMaxValue(getMaxDate(weight), weight);
            document.getElementById('height_date').innerHTML = getMaxDate(weight).toDateString();
         }
-      } else if (p.age > 17) {
+
+      } //Adult health indicators and prevention data 
+      else if (p.age > 17) {
 
         document.getElementById('height').style.display = "none"
         document.getElementById('height_date').style.display = "none"
