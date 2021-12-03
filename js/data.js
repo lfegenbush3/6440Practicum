@@ -213,14 +213,13 @@ FHIR.oauth2.ready().then(function(client) {
 
         //GLUCOSE
         var glucose = byCodes('2345-7');
-        console.log("gluxose:" +glucose)
+        
         //var glucose = byCodes('2339-0', '1558-6', '10450-5', '76629-5', '2345-7');
         if (glucose == 'undefined'){
-          console.log(glucose)
+          
           document.getElementById('glucose').innerHTML = 'No Recent Measurement'
           document.getElementById('glucose_date').innerHTML = 'No Recent Measurement'
         } else{
-          console.log(glucose)
           document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
           document.getElementById('glucose_date').innerHTML = getMaxDate(glucose).toDateString();
         }
@@ -228,6 +227,8 @@ FHIR.oauth2.ready().then(function(client) {
         if(p.gender == 'Female'){
           //CERVICAL CANCER SCREENING
           var cervical_cancer = byCodes('54038-5');
+          console.log(cervical_cancer)
+        
           if (cervical_cancer = 'undefined'){
             document.getElementById('c_cancer').innerHTML = 'No Recent Screening';
           } else{
