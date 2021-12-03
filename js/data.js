@@ -127,7 +127,7 @@ FHIR.oauth2.ready().then(function(client) {
   client.request(`Immunization?patient=${client.patient.id}`, {
     resolveReferences: ['identifier', 'status']
   }).then(function(proc){
-      console.log(proc)
+      console.log(proc.entry[0])
   });
 
   var query = new URLSearchParams();
