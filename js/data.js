@@ -131,7 +131,10 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|55284-4', //Blood Pressure
     'http://loinc.org|8480-6', //Blood Pressure
     'http://loinc.org|8462-4', //Blood Pressure
-    'http://loinc.org|2339-0', //Glucose
+    'http://loinc.org|2339-0', //Glucose in Blood
+    'http://loinc.org|76629-5', //Glucose fasting in Blood
+    'http://loinc.org|1558-6', //Glucose fasting in plasma
+    'http://loinc.org|10450-5', //Glucose fasting in plasma
     'http://loinc.org|33248-6', //Diabetes status
     'http://loinc.org|97073-1', 
     'http://loinc.org|77353-1', //Colon cancer screening, noninvasive
@@ -200,8 +203,9 @@ FHIR.oauth2.ready().then(function(client) {
         document.getElementById('height').style.display = "none"
         document.getElementById('height_date').style.display = "none"
         document.getElementById('height_label').style.display = "none"
+
         //GLUCOSE
-      /*  var glucose = byCodes('2339-0');
+        var glucose = byCodes('2339-0', '1558-6', '10450-5', '76629-5');
         if (glucose = 'undefined'){
           console.log(glucose)
           document.getElementById('glucose').innerHTML = 'No Recent Measurement'
@@ -209,17 +213,17 @@ FHIR.oauth2.ready().then(function(client) {
         } else{
           document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
           document.getElementById('glucose_date').innerHTML = getMaxDate(glucose).toDateString();
-        }*/
+        }
 
         if(p.gender = 'Female'){
-          //CERVICAL CANCER
+          //CERVICAL CANCER SCREENING
           var cervical_cancer = byCodes('54038-5');
           if (cervical_cancer = 'undefined'){
             document.getElementById('c_cancer').innerHTML = 'No Recent Screening';
           } else{
             document.getElementById('c_cancer').innerHTML = cervical_cancer;
         }
-
+        //COLON CANCER SCREENING
         if (p.age > 44){
           var colonoscopy = byCodes('28023-0');
           if (colonoscopy = 'undefined'){
