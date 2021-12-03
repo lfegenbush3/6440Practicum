@@ -99,8 +99,6 @@ FHIR.oauth2.ready().then(function(client) {
     try{
       console.log(imm.entry.length)
       for(i = 0; i < imm.entry.length; i++){
-        console.log(imm.entry[i])
-        console.log('here')
         try{
           if(imm.entry[i].resource.vaccineCode.coding[i].code == '208'){
             covid_vaccine = new Date(imm.entry[0].resource.date);
@@ -109,6 +107,7 @@ FHIR.oauth2.ready().then(function(client) {
             document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
           }
           if(imm.entry[i].resource.vaccineCode.coding[i].code == '140'){
+            console.log(imm.entry[i])
             flu_vaccine = new Date(imm.entry[0].resource.occurrenceDateTime);
             document.getElementById('flu_vaccine').innerHTML = flu_vaccine.toDateString();
           } else {
