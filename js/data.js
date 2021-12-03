@@ -97,6 +97,8 @@ FHIR.oauth2.ready().then(function(client) {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
     try{
+      forEach(imm)
+      {console.log(imm)}
       if(imm.entry[0] == null){
         console.log("true")
       }
@@ -132,7 +134,7 @@ FHIR.oauth2.ready().then(function(client) {
         //console.log(proc.entry[i].resource.code.coding[0].code)
         if(proc.entry[i].resource.code.coding[0].code =='73761001')
         {
-          console.log(proc.entry[i].resource)
+          console.log(new Date(proc.entry[i].resource.performedPeriod))
         }
       }
   });
