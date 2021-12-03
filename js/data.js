@@ -97,9 +97,9 @@ FHIR.oauth2.ready().then(function(client) {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
     try{
-      console.log(imm)
+      
       for(i in imm.entry){
-        
+        console.log(imm.entry[i])
         if(imm.entry[i].resource.vaccineCode.coding[i].code == '208'){
           covid_vaccine = new Date(imm.entry[0].resource.date);
           document.getElementById('covid_vaccine').innerHTML = covid_vaccine.toDateString();
@@ -125,13 +125,23 @@ FHIR.oauth2.ready().then(function(client) {
   client.request(`Procedure?patient=${client.patient.id}`, {
     resolveReferences: ['identifier', 'status']
   }).then(function(proc){
-    //  console.log(proc)
+    var c_dates;
       for(i in proc.entry){
         if(proc.entry[i].resource.code.coding[0].code =='73761001')
         {
-          console.log(new Date(proc.entry[i].resource.performedPeriod.end))
+         // console.log(new Date(proc.entry[i].resource.performedPeriod.end))
+          c_dates.push(new Date(proc.entry[i].resource.performedPeriod.end))
         }
       }
+    if(c_dates.length > 0 && p.age > 45) {
+      document.getElementById('colon_cancer').innerHTML = new Date(Math.max(c_dates));
+    } else if(c_dates.length ==0 && p.age > 45) {
+      document.getElementById('colon_cancer').innerHTML = 'No Recent Screening';
+    } else {
+      document.getElementById('colon_cancer_label').style.display = "none"
+      document.getElementById('colon_cancer').style.display = "none"
+    }
+
   });
 
   var query = new URLSearchParams();
@@ -214,9 +224,7 @@ FHIR.oauth2.ready().then(function(client) {
         document.getElementById('glucose').style.display = "none"
         document.getElementById('glucose_date').style.display = "none"
         document.getElementById('glucose_label').style.display = "none"
-        document.getElementById('c_cancer').style.display = "none"
-        document.getElementById('colon_cancer').style.display = "none"
-        document.getElementById('c_cancer_label').style.display = "none"
+       
         document.getElementById('colon_cancer_label').style.display = "none"
 
       } //Adult health indicators and prevention data 
