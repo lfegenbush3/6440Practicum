@@ -166,6 +166,7 @@ FHIR.oauth2.ready().then(function(client) {
       
       //Display WEIGHT
       var weight = byCodes('29463-7');
+      console.log(weight)
       if (weight = 'undefined') {
         document.getElementById('weight').innerHTML = 'No Recent Measurement'
         document.getElementById('weight_date').innerHTML = 'No Recent Measurement' 
@@ -176,6 +177,8 @@ FHIR.oauth2.ready().then(function(client) {
       //Display BP
       var systolicbp = getBloodPressureValue(byCodes('55284-4'), '8480-6');
       var diastolicbp = getBloodPressureValue(byCodes('55284-4'), '8462-4');
+      console.log(systolicbp)
+      console.log(diastolicbp)
       if (systolicbp = 'undefined') {
         document.getElementById('systolicbp').innerHTML = 'No Recent Measurement'
         document.getElementById('diastolicbp').innerHTML = 'No Recent Measurement' 
