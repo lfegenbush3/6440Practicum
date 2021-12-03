@@ -98,7 +98,7 @@ FHIR.oauth2.ready().then(function(client) {
   }).then(function(imm){
     try{
       
-      for(i < imm.entry.length){
+      for(i = 0; i < imm.entry.length; i++){
         console.log(imm.entry[i])
         console.log('here')
         if(imm.entry[i].resource.vaccineCode.coding[i].code == '208'){
