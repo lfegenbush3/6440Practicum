@@ -101,7 +101,7 @@ FHIR.oauth2.ready().then(function(client) {
         console.log("true")
       }
       for(i in imm.entry[0].resource.vaccineCode.coding){
-        console.log(imm.entry[i])
+        console.log("flu"+imm.entry[i])
         if(imm.entry[i].resource.vaccineCode.coding[i].code == '208'){
           covid_vaccine = new Date(imm.entry[0].resource.date);
           document.getElementById('covid_vaccine').innerHTML = covid_vaccine.toDateString();
