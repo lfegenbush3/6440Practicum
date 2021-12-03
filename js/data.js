@@ -100,13 +100,13 @@ FHIR.oauth2.ready().then(function(client) {
       for(i = 0; i < imm.entry.length; i++){
         try{
           console.log(imm.entry[i])
-          if(imm.entry[i].resource.vaccineCode.coding[i].code == '208'){
+          if(imm.entry[i].resource.vaccineCode.coding[0].code == '208'){
             covid_vaccine = new Date(imm.entry[0].resource.date);
             document.getElementById('covid_vaccine').innerHTML = covid_vaccine.toDateString();
           } else {
             document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
           }
-          if(imm.entry[i].resource.vaccineCode.coding[i].code == '140'){
+          if(imm.entry[i].resource.vaccineCode.coding[0].code == '140'){
             console.log(imm.entry[i].resource.vaccineCode.coding[0].code)
             console.log('here')
             flu_vaccine = new Date(imm.entry[0].resource.occurrenceDateTime);
