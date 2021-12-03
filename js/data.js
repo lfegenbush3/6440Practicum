@@ -127,7 +127,7 @@ FHIR.oauth2.ready().then(function(client) {
     resolveReferences: ['identifier', 'status']
   }).then(function(proc){
       console.log(proc.entry[0].resource.code)
-      console.log(proc.entry[0])
+      console.log(proc.entry[1])
   });
 
   var query = new URLSearchParams();
