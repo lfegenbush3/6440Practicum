@@ -135,6 +135,7 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|76629-5', //Glucose fasting in Blood
     'http://loinc.org|1558-6', //Glucose fasting in plasma
     'http://loinc.org|10450-5', //Glucose fasting in plasma
+    'http://loinc.org|2345-7', //Glucose  in plasma
     'http://loinc.org|33248-6', //Diabetes status
     'http://loinc.org|97073-1', 
     'http://loinc.org|77353-1', //Colon cancer screening, noninvasive
@@ -206,7 +207,7 @@ FHIR.oauth2.ready().then(function(client) {
         document.getElementById('height_label').style.display = "none"
 
         //GLUCOSE
-        var glucose = byCodes('2339-0', '1558-6', '10450-5', '76629-5');
+        var glucose = byCodes('2339-0', '1558-6', '10450-5', '76629-5', '2347-5');
         if (glucose = 'undefined'){
           console.log(glucose)
           document.getElementById('glucose').innerHTML = 'No Recent Measurement'
