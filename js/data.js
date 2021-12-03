@@ -192,7 +192,7 @@ FHIR.oauth2.ready().then(function(client) {
       //Display WEIGHT
       var weight = byCodes('29463-7');
       console.log(weight)
-      if (weight == 'undefined') {
+      if (weight == 'undefined' || weight.length == 0) {
         document.getElementById('weight').innerHTML = 'No Recent Measurement'
         document.getElementById('weight_date').innerHTML = 'No Recent Measurement' 
       } else {
