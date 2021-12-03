@@ -212,7 +212,8 @@ FHIR.oauth2.ready().then(function(client) {
         document.getElementById('height_label').style.display = "none"
 
         //GLUCOSE
-        var glucose = byCodes('2339-0', '1558-6', '10450-5', '76629-5', '2347-5');
+        //var glucose = byCodes('2347-5');
+        var glucose = byCodes('2339-0', '1558-6', '10450-5', '76629-5', '2345-7');
         if (glucose = 'undefined'){
           console.log(glucose)
           document.getElementById('glucose').innerHTML = 'No Recent Measurement'
