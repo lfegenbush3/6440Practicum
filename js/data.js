@@ -100,6 +100,7 @@ FHIR.oauth2.ready().then(function(client) {
       
       for(i in imm.entry){
         console.log(imm.entry[i])
+        console.log('here')
         if(imm.entry[i].resource.vaccineCode.coding[i].code == '208'){
           covid_vaccine = new Date(imm.entry[0].resource.date);
           document.getElementById('covid_vaccine').innerHTML = covid_vaccine.toDateString();
@@ -125,7 +126,7 @@ FHIR.oauth2.ready().then(function(client) {
   client.request(`Procedure?patient=${client.patient.id}`, {
     resolveReferences: ['identifier', 'status']
   }).then(function(proc){
-    var c_dates;
+    var c_dates = [];
       for(i in proc.entry){
         if(proc.entry[i].resource.code.coding[0].code =='73761001')
         {
