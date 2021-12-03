@@ -129,7 +129,7 @@ FHIR.oauth2.ready().then(function(client) {
   }).then(function(proc){
       console.log(proc)
       for(i in proc.entry){
-        console.log(proc.entry[i].resource.code.coding.code)
+        console.log(proc.entry[i].resource.code.coding[0].code)
         if(proc.entry[i].resource.code.coding.code =='73761001')
         {
           console.log(proc.entry[i].resource.code.coding.code)
