@@ -217,6 +217,7 @@ FHIR.oauth2.ready().then(function(client) {
         //GLUCOSE
         var glucose = byCodes('2345-7');
         console.log('glucose test 1')
+        console.log(glucose)
         //var glucose = byCodes('2339-0', '1558-6', '10450-5', '76629-5', '2345-7');
         if (glucose == 'undefined'){
           console.log('glucose test 1')
