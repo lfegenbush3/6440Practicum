@@ -127,12 +127,12 @@ FHIR.oauth2.ready().then(function(client) {
   client.request(`Procedure?patient=${client.patient.id}`, {
     resolveReferences: ['identifier', 'status']
   }).then(function(proc){
-      console.log(proc)
+     // console.log(proc)
       for(i in proc.entry){
-        console.log(proc.entry[i].resource.code.coding[0].code)
-        if(proc.entry[i].resource.code.coding.code =='73761001')
+        //console.log(proc.entry[i].resource.code.coding[0].code)
+        if(proc.entry[i].resource.code.coding[0].code =='73761001')
         {
-          console.log(proc.entry[i].resource.code.coding.code)
+          console.log(proc.entry[i].resource.code.coding[0].code)
         }
       }
   });
