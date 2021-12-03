@@ -163,6 +163,7 @@ FHIR.oauth2.ready().then(function(client) {
       console.log(ob)
       // create patient object
       console.log(p)
+      console.log(p.age)
       
       //Display WEIGHT
       var weight = byCodes('29463-7');
@@ -239,6 +240,7 @@ FHIR.oauth2.ready().then(function(client) {
         }
         //COLON CANCER SCREENING
         if (p.age > 44){
+
           var colonoscopy = byCodes('28023-0');
           if (colonoscopy = 'undefined'){
 
