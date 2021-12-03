@@ -163,7 +163,7 @@ FHIR.oauth2.ready().then(function(client) {
       console.log(ob)
       // create patient object
       console.log(p)
-      console.log(p.age)
+      console.log("age" + p.age)
       
       //Display WEIGHT
       var weight = byCodes('29463-7');
