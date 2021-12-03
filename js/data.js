@@ -93,7 +93,7 @@ FHIR.oauth2.ready().then(function(client) {
     }
   );
  // get immunization resoruce values
-  client.request(`ProcedureRequest?patient=${client.patient.id}`, {
+  client.request(`Procedure?patient=${client.patient.id}`, {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
     console.log(imm)
