@@ -220,6 +220,7 @@ FHIR.oauth2.ready().then(function(client) {
           document.getElementById('glucose').innerHTML = 'No Recent Measurement'
           document.getElementById('glucose_date').innerHTML = 'No Recent Measurement'
         } else{
+          console.log(glucose)
           document.getElementById('glucose').innerHTML = getMaxValue(getMaxDate(glucose), glucose);
           document.getElementById('glucose_date').innerHTML = getMaxDate(glucose).toDateString();
         }
