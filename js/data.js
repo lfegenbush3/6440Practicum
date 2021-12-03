@@ -116,6 +116,8 @@ FHIR.oauth2.ready().then(function(client) {
         }
       }
     } catch(err) {
+      document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
+      document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
       console.log(err.message)
     }
   }                 
