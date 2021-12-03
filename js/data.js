@@ -226,6 +226,9 @@ FHIR.oauth2.ready().then(function(client) {
 
         if(p.gender == 'Female'){
           //CERVICAL CANCER SCREENING
+          document.getElementById('c_cancer').style.display = "initial"
+          document.getElementById('c_cancer_label').style.display = "initial"
+          
           var cervical_cancer = byCodes('54038-5');
           console.log(cervical_cancer)
         
