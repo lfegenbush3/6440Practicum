@@ -240,7 +240,7 @@ FHIR.oauth2.ready().then(function(client) {
         }
         //COLON CANCER SCREENING
         if (p.age > 44){
-          document.getElementById('colon_cancer').innerHTML = 'No Recent Screening';
+          console.log('here')
           var colonoscopy = byCodes('28023-0');
           if (colonoscopy = 'undefined'){
 
