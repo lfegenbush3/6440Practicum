@@ -92,8 +92,8 @@ FHIR.oauth2.ready().then(function(client) {
       displayPatient(patient); 
     }
   );
-  // get observation resoruce values
-  client.request(`Immunization?patient=${client.patient.id}`, {
+ // get immunization resoruce values
+  client.request(`ProcedureRequest?patient=${client.patient.id}`, {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
     console.log(imm)
@@ -123,8 +123,15 @@ FHIR.oauth2.ready().then(function(client) {
   }                 
   );
 
-  var query = new URLSearchParams();
+  // get procedure resource values 
+  client.request(`Immunization?patient=${client.patient.id}`, {
+    resolveReferences: ['identifier', 'status']
+  }).then(function(proc){
+      console.log(proc)
+  });
 
+  var query = new URLSearchParams();
+ // get observation resoruce values
   query.set("patient", client.patient.id);
   query.set("_count", 150);
  // query.set("_sort", "-date");
@@ -216,11 +223,11 @@ FHIR.oauth2.ready().then(function(client) {
 
         //GLUCOSE
         var glucose = byCodes('2345-7');
-        console.log('glucose test 1')
-        console.log(glucose)
+     
+       
         //var glucose = byCodes('2339-0', '1558-6', '10450-5', '76629-5', '2345-7');
         if (glucose == 'undefined' || glucose.length == 0){
-          console.log('glucose test 2')
+          
           document.getElementById('glucose').innerHTML = 'No Recent Measurement'
           document.getElementById('glucose_date').innerHTML = 'No Recent Measurement'
         } else{
