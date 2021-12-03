@@ -96,7 +96,6 @@ FHIR.oauth2.ready().then(function(client) {
   client.request(`Immunization?patient=${client.patient.id}`, {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
-    console.log(imm)
     try{
       if(imm.entry[0] == null){
         console.log("true")
@@ -127,7 +126,7 @@ FHIR.oauth2.ready().then(function(client) {
   client.request(`Procedure?patient=${client.patient.id}`, {
     resolveReferences: ['identifier', 'status']
   }).then(function(proc){
-      console.log(proc.entry[0][0].resource)
+      console.log(proc.entry[0].resource.code)
       console.log(proc.entry[0])
   });
 
