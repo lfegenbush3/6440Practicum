@@ -93,7 +93,7 @@ FHIR.oauth2.ready().then(function(client) {
     }
   );
  // get immunization resoruce values
-  client.request(`Procedure?patient=${client.patient.id}`, {
+  client.request(`Immunization?patient=${client.patient.id}`, {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
     console.log(imm)
@@ -124,7 +124,7 @@ FHIR.oauth2.ready().then(function(client) {
   );
 
   // get procedure resource values 
-  client.request(`Immunization?patient=${client.patient.id}`, {
+  client.request(`Procedure?patient=${client.patient.id}`, {
     resolveReferences: ['identifier', 'status']
   }).then(function(proc){
       console.log(proc.entry[0][0].resource)
