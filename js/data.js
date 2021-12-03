@@ -100,6 +100,7 @@ FHIR.oauth2.ready().then(function(client) {
       for(i = 0; i < imm.entry.length; i++){
         try{
           //console.log(imm.entry[i])
+          var flu_vaccine = []
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '208'){
             covid_vaccine = new Date(imm.entry[0].resource.date);
             document.getElementById('covid_vaccine').innerHTML = covid_vaccine.toDateString();
@@ -107,8 +108,8 @@ FHIR.oauth2.ready().then(function(client) {
             document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
           }
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '140'){
-            flu_vaccine = new Date(imm.entry[0].resource.occurrenceDateTime);
-            document.getElementById('flu_vaccine').innerHTML = flu_vaccine.toDateString();
+            flu_vaccine.push(new Date(imm.entry[0].resource.occurrenceDateTime));
+            document.getElementById('flu_vaccine').innerHTML = getMaxDate(flu_vaccine).toDateString();
           } else {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
           } 
@@ -137,8 +138,8 @@ FHIR.oauth2.ready().then(function(client) {
         }
       }
     if(c_dates.length > 0 && p.age > 45) {
-      console.log(c_dates[0])
-      document.getElementById('colon_cancer').innerHTML = c_dates[0].toDateString();
+      console.log(getMaxDate(c_dates).toDateString())
+      document.getElementById('colon_cancer').innerHTML = getMaxDate(c_dates).toDateString();
     } else if(c_dates.length ==0 && p.age > 45) {
       document.getElementById('colon_cancer').innerHTML = 'No Recent Screening';
     } else {
