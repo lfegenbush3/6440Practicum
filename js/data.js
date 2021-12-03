@@ -97,7 +97,7 @@ FHIR.oauth2.ready().then(function(client) {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
     try{
-      
+      console.log(imm.entry[0])
       for(i = 0; i < imm.entry[0].length; i++){
         console.log(imm.entry[i])
         console.log('here')
@@ -135,8 +135,8 @@ FHIR.oauth2.ready().then(function(client) {
         }
       }
     if(c_dates.length > 0 && p.age > 45) {
-      console.log(c_dates)
-      document.getElementById('colon_cancer').innerHTML = new Date(Math.max(c_dates));
+      console.log(c_dates[0])
+      document.getElementById('colon_cancer').innerHTML = c_dates[0];
     } else if(c_dates.length ==0 && p.age > 45) {
       document.getElementById('colon_cancer').innerHTML = 'No Recent Screening';
     } else {
