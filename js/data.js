@@ -166,7 +166,7 @@ FHIR.oauth2.ready().then(function(client) {
       console.log("age" + p.age)
       
       //Display WEIGHT
-      var weight = byCodes('29463-7');
+      var weight = byCodes('f29463-7');
       if (weight = 'undefined') {
         document.getElementById('weight').innerHTML = 'No Recent Measurement'
         document.getElementById('weight_date').innerHTML = 'No Recent Measurement' 
@@ -240,7 +240,7 @@ FHIR.oauth2.ready().then(function(client) {
         }
         //COLON CANCER SCREENING
         if (p.age > 44){
-
+          document.getElementById('colon_cancer').innerHTML = 'No Recent Screening';
           var colonoscopy = byCodes('28023-0');
           if (colonoscopy = 'undefined'){
 
