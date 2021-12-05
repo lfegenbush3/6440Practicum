@@ -108,8 +108,8 @@ FHIR.oauth2.ready().then(function(client) {
             document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
           }
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '140'){
-            flu_vaccine.push(new Date(imm.entry[0].resource.occurrenceDateTime));
-            document.getElementById('flu_vaccine').innerHTML = getMaxDate(flu_vaccine).toDateString();
+            flu_vaccine = new Date(imm.entry[0].resource.occurrenceDateTime);
+            document.getElementById('flu_vaccine').innerHTML = flu_vaccine.toDateString();
           } else {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
           } 
