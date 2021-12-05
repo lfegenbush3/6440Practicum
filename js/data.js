@@ -109,7 +109,7 @@ FHIR.oauth2.ready().then(function(client) {
           }
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '140'){
             
-            flu_vaccine = new Date(imm.entry[0].resource.occurrenceDateTime);
+            flu_vaccine.push(new Date(imm.entry[0].resource.occurrenceDateTime));
             console.log(flu_vaccine)
             document.getElementById('flu_vaccine').innerHTML = flu_vaccine.toDateString();
           } else {
@@ -216,7 +216,15 @@ FHIR.oauth2.ready().then(function(client) {
         document.getElementById('diastolicbp').innerHTML = diastolicbp;  
       }
       
-       
+      var cholesterol = byCodes('2085-9');
+      console.log(cholesterol)
+      if (cholesterol == 'undefined' || cholesterol.length == 0) {
+        document.getElementById('cholesterol').innerHTML = 'No Recent Measurement'
+        document.getElementById('cholesterol_date').innerHTML = 'No Recent Measurement' 
+      } else {
+        document.getElementById('cholesterol').innerHTML = getMaxValue(getMaxDate(cholesterol), cholesterol);
+        document.getElementById('cholesterol_date').innerHTML = getMaxDate(cholesterol).toDateString();
+      }
       //Child health indicators and prevention data
       if (p.age < 18) {
         //HEIGHT
