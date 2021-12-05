@@ -108,8 +108,9 @@ FHIR.oauth2.ready().then(function(client) {
             document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
           }
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '140'){
-            console.log(new Date(imm.entry[0].resource.occurrenceDateTime))
+            
             flu_vaccine = new Date(imm.entry[0].resource.occurrenceDateTime);
+            console.log(flu_vaccine)
             document.getElementById('flu_vaccine').innerHTML = flu_vaccine.toDateString();
           } else {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
@@ -174,6 +175,7 @@ FHIR.oauth2.ready().then(function(client) {
     'http://loinc.org|28023-0', //Colon cancer screening, colonoscopy
     'http://loinc.org|86662-4', //Cervical cancer screening - cervical cytology
     'http://loinc.org|8302-2', // Height
+    'http://loinc.org|2085-9', //cholesterol
   ].join(","));
 
   client.request("Observation?" + query, {
