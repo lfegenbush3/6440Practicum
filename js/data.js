@@ -106,7 +106,6 @@ FHIR.oauth2.ready().then(function(client) {
       var covid_vaccine = "";
       for(i = 0; i < imm.entry.length; i++){
         try{
-          
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '208'){ 
             covid_vaccine = new Date(imm.entry[0].resource.date);
             document.getElementById('covid_vaccine').innerHTML = covid_vaccine.toDateString();
@@ -145,9 +144,9 @@ FHIR.oauth2.ready().then(function(client) {
           c_dates.push(new Date(proc.entry[i].resource.performedPeriod.end))
         }
       }
-    if(c_dates.length > 0 && p.age > 45) {
+    if(c_dates.length > 0 && p.age > 49) {
       document.getElementById('colon_cancer').innerHTML = getMaxValDateArray(c_dates).toDateString();
-    } else if(c_dates.length ==0 && p.age > 45) {
+    } else if(c_dates.length ==0 && p.age > 49) {
       document.getElementById('colon_cancer').innerHTML = 'No Recent Screening';
     } else {
       document.getElementById('colon_cancer_label').style.display = "none"
