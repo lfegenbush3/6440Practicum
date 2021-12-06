@@ -89,7 +89,7 @@ body {
   .mini-card {
     display: flex;
     align-items: stretch;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 5px;
     background-color: #A9A9A9;
     grid-column-start: auto;
