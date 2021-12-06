@@ -118,7 +118,7 @@ FHIR.oauth2.ready().then(function(client) {
           } 
           if(flu_vaccine == "undefined") {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
-            console.log(covid_vaccine)
+            //console.log(covid_vaccine)
           if(covid_vaccine == "undefined" || covid_vaccine == "Invalid Date") {
               document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
           }
