@@ -110,14 +110,13 @@ FHIR.oauth2.ready().then(function(client) {
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '208'){
             covid_vaccine = new Date(imm.entry[0].resource.date);
             document.getElementById('covid_vaccine').innerHTML = covid_vaccine.toDateString();
-          } else {
+          } 
+          if((covid_vaccine == "undefined")) {
             document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
           }
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '140'){
             //console.log(new Date(imm.entry[i].resource.occurrenceDateTime))
             flu_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
-            console.log(flu_vaccine)
-            console.log(getMaxValDateArray(flu_vaccine))
             document.getElementById('flu_vaccine').innerHTML = getMaxValDateArray(flu_vaccine).toDateString();
           } 
           if(flu_vaccine == "undefined") {
