@@ -106,14 +106,10 @@ FHIR.oauth2.ready().then(function(client) {
       for(i = 0; i < imm.entry.length; i++){
         try{
        //   console.log(imm.entry)
-         
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '208'){
             covid_vaccine = new Date(imm.entry[0].resource.date);
             document.getElementById('covid_vaccine').innerHTML = covid_vaccine.toDateString();
           } 
-          if(covid_vaccine == "undefined") {
-            document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
-          }
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '140'){
             //console.log(new Date(imm.entry[i].resource.occurrenceDateTime))
             flu_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
@@ -121,6 +117,12 @@ FHIR.oauth2.ready().then(function(client) {
           } 
           if(flu_vaccine == "undefined") {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
+            console.log(covid_vaccine)
+          if(covid_vaccine == "undefined") {
+              document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
+          }
+
+
           } 
         } catch(err) {
             console.log(err.message)
