@@ -106,6 +106,7 @@ FHIR.oauth2.ready().then(function(client) {
       var tdap_vaccine = [];
       var covid_vaccine = "";
       var shingles_vaccine = [];
+      var hpv_vaccine = [];
       for(i = 0; i < imm.entry.length; i++){
         try{
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '208'){ 
@@ -129,6 +130,15 @@ FHIR.oauth2.ready().then(function(client) {
             document.getElementById('shingles_label').style.display = "none"
             document.getElementById('shingles_vaccine').style.display = "none"
           }
+          if(p.age > 9){
+            if(imm.entry[i].resource.vaccineCode.coding[0].code == '62'){
+              hpv_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
+              document.getElementById('hpv_vaccine').innerHTML = getMaxValDateArray(hpv_vaccine).toDateString();
+            } 
+          } else {
+            document.getElementById('hpv_label').style.display = "none"
+            document.getElementById('hpv_vaccine').style.display = "none"
+          }
           if(flu_vaccine == "undefined") {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
           }
@@ -140,6 +150,9 @@ FHIR.oauth2.ready().then(function(client) {
           }
           if(shingles_vaccine == "undefined" || shingles_vaccine == "") {
             document.getElementById('shingles_vaccine').innerHTML = 'No Recent Vaccine';
+          }
+          if(hpv_vaccine == "undefined" || hpv_vaccine == "") {
+            document.getElementById('hpv_vaccine').innerHTML = 'No Recent Vaccine';
           }
         } catch(err) {
             console.log(err.message)
