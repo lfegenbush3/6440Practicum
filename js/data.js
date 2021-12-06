@@ -105,6 +105,7 @@ FHIR.oauth2.ready().then(function(client) {
       var flu_vaccine = [];
       var tdap_vaccine = [];
       var covid_vaccine = "";
+      var shingles_vaccine = [];
       for(i = 0; i < imm.entry.length; i++){
         try{
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '208'){ 
@@ -119,6 +120,10 @@ FHIR.oauth2.ready().then(function(client) {
             tdap_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
             document.getElementById('tdap_vaccine').innerHTML = getMaxValDateArray(tdap_vaccine).toDateString();
           } 
+          if(imm.entry[i].resource.vaccineCode.coding[0].code == '121'){
+            shingles_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
+            document.getElementById('shingles_vaccine').innerHTML = getMaxValDateArray(shingles_vaccine).toDateString();
+          }
           if(flu_vaccine == "undefined") {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
           }
@@ -127,7 +132,10 @@ FHIR.oauth2.ready().then(function(client) {
           }
           if(tdap_vaccine == "undefined" || tdap_vaccine == "") {
             document.getElementById('tdap_vaccine').innerHTML = 'No Recent Vaccine';
-        }
+          }
+          if(shingles_vaccine == "undefined" || shingles_vaccine == "") {
+            document.getElementById('shingles_vaccine').innerHTML = 'No Recent Vaccine';
+          }
         } catch(err) {
             console.log(err.message)
         }
@@ -136,6 +144,7 @@ FHIR.oauth2.ready().then(function(client) {
       document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
       document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
       document.getElementById('tdap_vaccine').innerHTML = 'No Recent Vaccine';
+      document.getElementById('shingles_vaccine').innerHTML = 'No Recent Vaccine';
       console.log(err.message)
     }
   }                 
