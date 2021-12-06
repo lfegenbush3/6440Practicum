@@ -120,9 +120,11 @@ FHIR.oauth2.ready().then(function(client) {
             tdap_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
             document.getElementById('tdap_vaccine').innerHTML = getMaxValDateArray(tdap_vaccine).toDateString();
           } 
-          if(imm.entry[i].resource.vaccineCode.coding[0].code == '121'){
-            shingles_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
-            document.getElementById('shingles_vaccine').innerHTML = getMaxValDateArray(shingles_vaccine).toDateString();
+          if(p.age > 50){
+            if(imm.entry[i].resource.vaccineCode.coding[0].code == '121'){
+              shingles_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
+              document.getElementById('shingles_vaccine').innerHTML = getMaxValDateArray(shingles_vaccine).toDateString();
+            }
           }
           if(flu_vaccine == "undefined") {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
