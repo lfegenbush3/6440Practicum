@@ -60,6 +60,11 @@ function getMaxValue(max_date, ob_arr) {
   }
 }
 
+function getMaxValDateArray(ob_arr) {
+  //console.log(max_date)
+  return new Date(Math.max.apply(null, ob_arr));
+}
+
 function getBloodPressureValue(BPObservations, typeOfPressure) {
 
   var formattedBPObservations = [];
@@ -112,7 +117,7 @@ FHIR.oauth2.ready().then(function(client) {
             //console.log(new Date(imm.entry[i].resource.occurrenceDateTime))
             flu_vaccine.push(imm.entry[i].resource.occurrenceDateTime);
             console.log(flu_vaccine)
-            console.log(getMaxDate(flu_vaccine))
+            console.log(getMaxValDateArray(flu_vaccine))
             document.getElementById('flu_vaccine').innerHTML = flu_vaccine[1].toDateString();
           } else {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
