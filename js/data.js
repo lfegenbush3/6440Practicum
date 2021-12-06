@@ -146,8 +146,7 @@ FHIR.oauth2.ready().then(function(client) {
         }
       }
     if(c_dates.length > 0 && p.age > 45) {
-      console.log(getMaxValDateArray(c_dates).toDateString())
-      document.getElementById('colon_cancer').innerHTML = getMaxDate(c_dates).toDateString();
+      document.getElementById('colon_cancer').innerHTML = getMaxValDateArray(c_dates).toDateString();
     } else if(c_dates.length ==0 && p.age > 45) {
       document.getElementById('colon_cancer').innerHTML = 'No Recent Screening';
     } else {
