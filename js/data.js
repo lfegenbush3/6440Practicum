@@ -118,7 +118,7 @@ FHIR.oauth2.ready().then(function(client) {
             flu_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
             console.log(flu_vaccine)
             console.log(getMaxValDateArray(flu_vaccine))
-            document.getElementById('flu_vaccine').innerHTML = flu_vaccine[1].toDateString();
+            document.getElementById('flu_vaccine').innerHTML = getMaxValDateArray(flu_vaccine).toDateString();
           } else {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
           } 
