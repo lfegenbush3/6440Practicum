@@ -127,7 +127,7 @@ FHIR.oauth2.ready().then(function(client) {
             } 
           } else {
             document.getElementById('shingles_label').style.display = "none"
-            document.getElementById('shingles').style.display = "none"
+            document.getElementById('shingles_vaccine').style.display = "none"
           }
           if(flu_vaccine == "undefined") {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
