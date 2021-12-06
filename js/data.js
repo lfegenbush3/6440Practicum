@@ -124,10 +124,10 @@ FHIR.oauth2.ready().then(function(client) {
             if(imm.entry[i].resource.vaccineCode.coding[0].code == '121'){
               shingles_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
               document.getElementById('shingles_vaccine').innerHTML = getMaxValDateArray(shingles_vaccine).toDateString();
-            }
-          } else {
+            } else {
             document.getElementById('shingles_label').style.display = "none"
             document.getElementById('shingles').style.display = "none"
+            }
           }
           if(flu_vaccine == "undefined") {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
