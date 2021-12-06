@@ -102,7 +102,8 @@ FHIR.oauth2.ready().then(function(client) {
     resolveReferences: ['identifier', 'status']
   }).then(function(imm){
     try{
-      var flu_vaccine = []
+      var flu_vaccine = [];
+      var tdap_vaccine = [];
       var covid_vaccine = "";
       for(i = 0; i < imm.entry.length; i++){
         try{
@@ -114,12 +115,19 @@ FHIR.oauth2.ready().then(function(client) {
             flu_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
             document.getElementById('flu_vaccine').innerHTML = getMaxValDateArray(flu_vaccine).toDateString();
           } 
+          if(imm.entry[i].resource.vaccineCode.coding[0].code == '115'){
+            tdap_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
+            document.getElementById('tdap_vaccine').innerHTML = getMaxValDateArray(tdap_vaccine).toDateString();
+          } 
           if(flu_vaccine == "undefined") {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
           }
           if(covid_vaccine == "undefined" || covid_vaccine == "") {
               document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
           }
+          if(tdap_vaccine == "undefined" || tdap_vaccine == "") {
+            document.getElementById('tdap_vaccine').innerHTML = 'No Recent Vaccine';
+        }
         } catch(err) {
             console.log(err.message)
         }
@@ -127,6 +135,7 @@ FHIR.oauth2.ready().then(function(client) {
     } catch(err) {
       document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
       document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
+      document.getElementById('tdap_vaccine').innerHTML = 'No Recent Vaccine';
       console.log(err.message)
     }
   }                 
