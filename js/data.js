@@ -107,8 +107,7 @@ FHIR.oauth2.ready().then(function(client) {
       for(i = 0; i < imm.entry.length; i++){
         try{
           
-          if(imm.entry[i].resource.vaccineCode.coding[0].code == '208'){
-            console.log("here")
+          if(imm.entry[i].resource.vaccineCode.coding[0].code == '208'){ 
             covid_vaccine = new Date(imm.entry[0].resource.date);
             document.getElementById('covid_vaccine').innerHTML = covid_vaccine.toDateString();
           } 
@@ -119,8 +118,7 @@ FHIR.oauth2.ready().then(function(client) {
           if(flu_vaccine == "undefined") {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
           }
-          console.log(covid_vaccine)
-          if(covid_vaccine == "undefined" || covid_vaccine == "Invalid Date") {
+          if(covid_vaccine == "undefined" || covid_vaccine == "") {
               document.getElementById('covid_vaccine').innerHTML = 'No Recent Vaccine';
           }
         } catch(err) {
