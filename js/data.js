@@ -135,7 +135,10 @@ FHIR.oauth2.ready().then(function(client) {
             if(imm.entry[i].resource.vaccineCode.coding[0].code == '62'){
               hpv_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
               document.getElementById('hpv_vaccine').innerHTML = getMaxValDateArray(hpv_vaccine).toDateString();
-            } 
+            } else {
+              document.getElementById('hpv_label').style.display = "none"
+              document.getElementById('hpv_vaccine').style.display = "none"
+            }
           } else {
             document.getElementById('hpv_label').style.display = "none"
             document.getElementById('hpv_vaccine').style.display = "none"
