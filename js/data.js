@@ -173,6 +173,7 @@ FHIR.oauth2.ready().then(function(client) {
     resolveReferences: ['identifier', 'status']
   }).then(function(proc){
     var c_dates = [];
+    try{
       for(i in proc.entry){
         if(proc.entry[i].resource.code.coding[0].code =='73761001')
         {
@@ -188,7 +189,11 @@ FHIR.oauth2.ready().then(function(client) {
       document.getElementById('colon_cancer_label').style.display = "none"
       document.getElementById('colon_cancer').style.display = "none"
     }
-
+  } catch(err) {
+    document.getElementById('colon_cancer_label').style.display = "none"
+    document.getElementById('colon_cancer').style.display = "none"
+    console.log(err.message)
+  }
   });
 
   var query = new URLSearchParams();
