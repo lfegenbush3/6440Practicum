@@ -139,7 +139,8 @@ FHIR.oauth2.ready().then(function(client) {
             document.getElementById('hpv_label').style.display = "none"
             document.getElementById('hpv_vaccine').style.display = "none"
           }
-          if(flu_vaccine == "undefined") {
+          console.log(flu_vaccine)
+          if(flu_vaccine == "undefined"|| flu_vaccine == "") {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
           }
           if(covid_vaccine == "undefined" || covid_vaccine == "") {
