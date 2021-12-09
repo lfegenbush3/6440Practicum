@@ -131,19 +131,15 @@ FHIR.oauth2.ready().then(function(client) {
             document.getElementById('shingles_label').style.display = "none"
             document.getElementById('shingles_vaccine').style.display = "none"
           }
-          if(p.age > 9){
-            if(imm.entry[i].resource.vaccineCode.coding[0].code == '62'){
+          if(p.age > 9 && imm.entry[i].resource.vaccineCode.coding[0].code == '62'){
               hpv_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
               document.getElementById('hpv_vaccine').innerHTML = getMaxValDateArray(hpv_vaccine).toDateString();
-            } else {
+          } else {
               console.log("hpv: " + hpv_vaccine)
               document.getElementById('hpv_label').style.display = "none"
               document.getElementById('hpv_vaccine').style.display = "none"
-            }
-          } else {
-            document.getElementById('hpv_label').style.display = "none"
-            document.getElementById('hpv_vaccine').style.display = "none"
           }
+         
           
           if(flu_vaccine == "undefined"|| flu_vaccine == ""  ||flu_vaccine =='Invalid Date') {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
