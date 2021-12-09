@@ -160,6 +160,7 @@ FHIR.oauth2.ready().then(function(client) {
       document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
       document.getElementById('tdap_vaccine').innerHTML = 'No Recent Vaccine';
       document.getElementById('shingles_vaccine').innerHTML = 'No Recent Vaccine';
+      document.getElementById('hpv_vaccine').innerHTML = 'No Recent Vaccine';
       console.log(err.message)
     }
   }                 
