@@ -135,7 +135,7 @@ FHIR.oauth2.ready().then(function(client) {
               hpv_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
               document.getElementById('hpv_vaccine').innerHTML = getMaxValDateArray(hpv_vaccine).toDateString();
           }          
-          console.log(hpv_vaccine)
+          console.log("hpv" + hpv_vaccine)
           if(flu_vaccine == "undefined"|| flu_vaccine == ""  ||flu_vaccine =='Invalid Date') {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
           }
