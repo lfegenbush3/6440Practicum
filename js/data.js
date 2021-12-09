@@ -115,7 +115,7 @@ FHIR.oauth2.ready().then(function(client) {
           } 
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '140'){
             console.log(imm.entry[i].resource.occurrenceDateTime)
-            flu_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
+            flu_vaccine.push(new Date(imm.entry[i].resource));
             document.getElementById('flu_vaccine').innerHTML = getMaxValDateArray(flu_vaccine).toDateString();
           } 
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '115'){
