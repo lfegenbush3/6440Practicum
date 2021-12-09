@@ -114,7 +114,7 @@ FHIR.oauth2.ready().then(function(client) {
             document.getElementById('covid_vaccine').innerHTML = covid_vaccine.toDateString();
           } 
           if(imm.entry[i].resource.vaccineCode.coding[0].code == '140'){
-            console.log(imm.entry[i].resource)
+            
             if(imm.entry[i].resource.date = ""){
               flu_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
             }
@@ -140,7 +140,7 @@ FHIR.oauth2.ready().then(function(client) {
               hpv_vaccine.push(new Date(imm.entry[i].resource.occurrenceDateTime));
               document.getElementById('hpv_vaccine').innerHTML = getMaxValDateArray(hpv_vaccine).toDateString();
           }          
-          console.log("hpv" + hpv_vaccine)
+          
           if(flu_vaccine == "undefined"|| flu_vaccine == ""  ||flu_vaccine =='Invalid Date') {
             document.getElementById('flu_vaccine').innerHTML = 'No Recent Vaccine';
           }
